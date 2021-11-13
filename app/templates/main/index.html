@@ -1,3 +1,17 @@
 {% extends "main/base.html" %}
 {% block content %}
+    <div id="fullpage">
+        <div class="section">Home</div>
+        <div class="section">About</div>
+        <div class="section">Projects</div>
+        <div class="section">Q&A</div>
+        <div class="section">Contact</div>
+    </div>
 {% endblock content %}
+{% block footer %}
+    <script>
+        $('#fullpage').fullpage({
+            anchors:['Home', 'About', 'Projects', 'Q&A', 'Contact']
+        });
+    </script>
+{% endblock footer %}
