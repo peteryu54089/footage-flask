@@ -1,29 +1,52 @@
-.bg-img {
+body {
     background-color: #165a72;
-    background-image: url('../../static/images/background.png');
+}
+
+.sec-1 {
+    background-image: url('/static/images/background.png');
     height: 100vh;
 }
 
-#pointLeftTop {
-    position: fixed;
+.sec-2 {
+    background-image: url('/static/images/background.png');
+    height: 100vh;
+}
+
+.sec-3 {
+    background-image: url('/static/images/background.png');
+    height: 100vh;
+}
+
+.sec-4 {
+    background-image: url('/static/images/background.png');
+    height: 100vh;
+}
+
+.sec-5 {
+    background-image: url('/static/images/background.png');
+    height: 100vh;
+}
+
+.point-left-top {
+    position: absolute;
     left: 10px;
     top: 10px;
 }
 
-#pointRightTop {
-    position: fixed;
+.point-right-top {
+    position: absolute;
     right: 10px;
     top: 10px;
 }
 
-#pointLeftBottom {
-    position: fixed;
+.point-left-bottom {
+    position: absolute;
     left: 10px;
     bottom: 10px;
 }
 
-#pointRightBottom {
-    position: fixed;
+.point-right-bottom {
+    position: absolute;
     right: 10px;
     bottom: 10px;
 }

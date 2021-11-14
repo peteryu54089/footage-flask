@@ -1,17 +1,36 @@
 {% extends "main/base.html" %}
 {% block content %}
     <div id="fullpage">
-        <div class="section">Home</div>
-        <div class="section">About</div>
-        <div class="section">Projects</div>
-        <div class="section">Q&A</div>
-        <div class="section">Contact</div>
+        <div class="section sec-1">Home</div>
+        <div class="section sec-2">
+            <img class="point-left-top" src="/static/images/point.png">
+            <img class="point-right-top" src="/static/images/point.png">
+            <img class="point-left-bottom" src="/static/images/point.png">
+            <img class="point-right-bottom" src="/static/images/point.png">
+            About
+        </div>
+        <div class="section sec-3">Projects</div>
+        <div class="section sec-4">
+            <img class="point-left-top" src="/static/images/point.png">
+            <img class="point-right-top" src="/static/images/point.png">
+            <img class="point-left-bottom" src="/static/images/point.png">
+            <img class="point-right-bottom" src="/static/images/point.png">
+            Q&A
+        </div>
+        <div class="section sec-5">
+            <img class="point-left-top" src="/static/images/point.png">
+            <img class="point-right-top" src="/static/images/point.png">
+            <img class="point-left-bottom" src="/static/images/point.png">
+            <img class="point-right-bottom" src="/static/images/point.png">
+            Contact
+        </div>
     </div>
 {% endblock content %}
 {% block footer %}
     <script>
         $('#fullpage').fullpage({
-            anchors:['Home', 'About', 'Projects', 'Q&A', 'Contact']
+            verticalCentered: false
         });
+        // $.fn.fullpage.moveTo(1)
     </script>
 {% endblock footer %}
