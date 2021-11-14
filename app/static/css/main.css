@@ -29,37 +29,57 @@ body {
 
 .point-left-top {
     position: absolute;
-    left: 10px;
-    top: 10px;
+    max-width: 1.6em;
+    left: 0.7em;
+    top: 0.7em;
 }
 
 .point-right-top {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    max-width: 1.6em;
+    right: 0.7em;
+    top: 0.7em;
 }
 
 .point-left-bottom {
     position: absolute;
-    left: 10px;
-    bottom: 10px;
+    max-width: 1.6em;
+    left: 0.7em;
+    bottom: 0.7em;
 }
 
 .point-right-bottom {
     position: absolute;
-    right: 10px;
-    bottom: 10px;
+    max-width: 1.6em;
+    right: 0.7em;
+    bottom: 0.7em;
 }
 
 .clickable {
     cursor: pointer;
 }
 
+.vertical-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-text {
+    font-size: 1.5em;
+    color: #FFF4C1;
+    text-shadow: 2px 2px 4px black;
+    font-family: serif;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
 #sidebar {
-    position: absolute;
     text-align: center;
+    position: absolute;
     display: none;
     height: 100vh;
+    width: 15em;
     right: 0;
     top: 0;
 }

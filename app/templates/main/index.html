@@ -1,76 +1,113 @@
 {% extends "main/base.html" %}
 {% block content %}
     <div id="fullpage">
-        <div class="section sec-1">Home</div>
+        <div class="section sec-1"></div>
         <div class="section sec-2">
             <img class="point-left-top" src="/static/images/point.png">
             <img class="point-right-top" src="/static/images/point.png">
             <img class="point-left-bottom" src="/static/images/point.png">
             <img class="point-right-bottom" src="/static/images/point.png">
-            About
         </div>
         <div class="section sec-3">
             <img class="point-left-top" src="/static/images/point.png">
             <img class="point-right-top" src="/static/images/point.png">
             <img class="point-left-bottom" src="/static/images/point.png">
             <img class="point-right-bottom" src="/static/images/point.png">
-            Projects
         </div>
         <div class="section sec-4">
             <img class="point-left-top" src="/static/images/point.png">
             <img class="point-right-top" src="/static/images/point.png">
             <img class="point-left-bottom" src="/static/images/point.png">
             <img class="point-right-bottom" src="/static/images/point.png">
-            Q&A
         </div>
         <div class="section sec-5">
             <img class="point-left-top" src="/static/images/point.png">
             <img class="point-right-top" src="/static/images/point.png">
             <img class="point-left-bottom" src="/static/images/point.png">
             <img class="point-right-bottom" src="/static/images/point.png">
-            Contact
         </div>
     </div>
     <div id="sidebar" class="flex-column">
-        <div style="height: 22%;"></div>
-        <div style="height: 22%;">
-            <img class="clickable" src="/static/images/logo.png" onclick="$.fn.fullpage.moveTo(1)" style="top: 10%;position: relative;padding-right: 20px;">
+        <div class="vertical-middle" style="height: 24%;"></div>
+        <div class="vertical-middle" style="height: 17%;">
+            <img class="clickable" src="/static/images/logo.png" onclick="$.fn.fullpage.moveTo(1)" style="max-width: 13em;margin-right: 1.5em;">
         </div>
-        <div style="height: 6%;">
-            <img class="clickable" src="/static/images/point.png" onclick="$.fn.fullpage.moveTo(2)" style="top: 25%;position: relative;">
+        <div class="vertical-middle" style="height: 6.5%;">
+            <div class="col-4" style="text-align: right;">
+                <span class="sidebar-text clickable" onclick="$.fn.fullpage.moveTo(2)">About</span>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-5" style="text-align: left;">
+                <img class="clickable" src="/static/images/point.png" onclick="$.fn.fullpage.moveTo(2)" style="max-width: 1.3em">
+            </div>
         </div>
-        <div style="height: 6%;">
-            <img class="clickable" src="/static/images/point.png" onclick="$.fn.fullpage.moveTo(3)" style="top: 25%;position: relative;">
+        <div class="vertical-middle" style="height: 6.5%;">
+            <div class="col-4" style="text-align: right;">
+                <span class="sidebar-text clickable" onclick="$.fn.fullpage.moveTo(3)">Projects</span>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-5" style="text-align: left;">
+                <img class="clickable" src="/static/images/point.png" onclick="$.fn.fullpage.moveTo(3)" style="max-width: 1.3em;">
+            </div>
         </div>
-        <div style="height: 6%;">
-            <img class="clickable" src="/static/images/point.png" onclick="$.fn.fullpage.moveTo(4)" style="top: 25%;position: relative;">
+        <div class="vertical-middle" style="height: 6.5%;">
+            <div class="col-4" style="text-align: right;">
+                <span class="sidebar-text clickable" onclick="$.fn.fullpage.moveTo(4)">Q&A</span>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-5" style="text-align: left;">
+                <img class="clickable" src="/static/images/point.png" onclick="$.fn.fullpage.moveTo(4)" style="max-width: 1.3em;">
+            </div>
         </div>
-        <div style="height: 6%;">
-            <img class="clickable" src="/static/images/point.png" onclick="$.fn.fullpage.moveTo(5)" style="top: 25%;position: relative;">
+        <div class="vertical-middle" style="height: 6.5%;">
+            <div class="col-4" style="text-align: right;">
+                <span class="sidebar-text clickable" onclick="$.fn.fullpage.moveTo(5)">Contact</span>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-5" style="text-align: left;">
+                <img class="clickable" src="/static/images/point.png" onclick="$.fn.fullpage.moveTo(5)" style="max-width: 1.3em;">
+            </div>
         </div>
-        <div style="height: 2%;"></div>
-        <div style="height: 8%;">
-            <img class="clickable" src="/static/images/point.png" style="top:30%;position:relative;">
+        <div class="vertical-middle" style="height: 2%;"></div>
+        <div class="vertical-middle" style="height: 9%;">
+            <div class="col-7"></div>
+            <div class="col-5" style="text-align: left;">
+                <img class="clickable" src="/static/images/point.png" style="max-width: 1.3em;">
+            </div>
         </div>
-        <div style="height: 8%;">
-            <img class="clickable" src="/static/images/point.png" style="top:30%;position:relative;">
+        <div class="vertical-middle" style="height: 9%;">
+            <div class="col-7"></div>
+            <div class="col-5" style="text-align: left;">
+                <img class="clickable" src="/static/images/point.png" style="max-width: 1.3em;">
+            </div>
         </div>
-        <div style="height: 10%;">
-            <img class="clickable" src="/static/images/point.png" style="top:35%;position:relative;">
+        <div class="vertical-middle" style="height: 11%;">
+            <div class="col-7"></div>
+            <div class="col-5" style="text-align: left;">
+                <img class="clickable" src="/static/images/point.png" style="max-width: 1.3em;">
+            </div>
         </div>
-        <div style="height: 4%;"></div>
+        <div class="vertical-middle" style="height: 2%;"></div>
     </div>
 {% endblock content %}
 {% block footer %}
     <script>
         $(function() {
+            if (window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(min-height: 576px)').matches) {
+                $('#sidebar').show();
+            }
+
+            $(window).resize(function() {
+                if (window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(min-height: 576px)').matches) {
+                    $('#sidebar').show();
+                } else {
+                    $('#sidebar').hide();
+                }
+            });
+
             $('#fullpage').fullpage({
                 verticalCentered: false
             });
-
-            if (!window.matchMedia('(max-width: 768px)').matches) {
-                $('#sidebar').show();
-            }
         });
     </script>
 {% endblock footer %}
