@@ -32,40 +32,40 @@
         <div class="vertical-middle" style="height: 17%;">
             <img class="clickable" src="/static/images/logo.png" onclick="$.fn.fullpage.moveTo(1)" style="max-width: 13em;margin-right: 1.5em;">
         </div>
-        <div class="vertical-middle" style="height: 6.5%;">
+        <div class="vertical-middle clickable" style="height: 6.5%;" onclick="$.fn.fullpage.moveTo(2)">
             <div class="col-4" style="text-align: right;">
-                <span class="sidebar-text clickable" onclick="$.fn.fullpage.moveTo(2)">About</span>
+                <span class="sidebar-text" id="sidebarText2">About</span>
             </div>
             <div class="col-3"></div>
             <div class="col-5" style="text-align: left;">
-                <img class="clickable" src="/static/images/point.png" onclick="$.fn.fullpage.moveTo(2)" style="max-width: 1.3em">
+                <img src="/static/images/point.png" style="max-width: 1.3em">
             </div>
         </div>
-        <div class="vertical-middle" style="height: 6.5%;">
+        <div class="vertical-middle clickable" style="height: 6.5%;" onclick="$.fn.fullpage.moveTo(3)">
             <div class="col-4" style="text-align: right;">
-                <span class="sidebar-text clickable" onclick="$.fn.fullpage.moveTo(3)">Projects</span>
+                <span class="sidebar-text" id="sidebarText3">Projects</span>
             </div>
             <div class="col-3"></div>
             <div class="col-5" style="text-align: left;">
-                <img class="clickable" src="/static/images/point.png" onclick="$.fn.fullpage.moveTo(3)" style="max-width: 1.3em;">
+                <img src="/static/images/point.png" style="max-width: 1.3em;">
             </div>
         </div>
-        <div class="vertical-middle" style="height: 6.5%;">
+        <div class="vertical-middle clickable" style="height: 6.5%;" onclick="$.fn.fullpage.moveTo(4)">
             <div class="col-4" style="text-align: right;">
-                <span class="sidebar-text clickable" onclick="$.fn.fullpage.moveTo(4)">Q&A</span>
+                <span class="sidebar-text" id="sidebarText4">Q&A</span>
             </div>
             <div class="col-3"></div>
             <div class="col-5" style="text-align: left;">
-                <img class="clickable" src="/static/images/point.png" onclick="$.fn.fullpage.moveTo(4)" style="max-width: 1.3em;">
+                <img src="/static/images/point.png" style="max-width: 1.3em;">
             </div>
         </div>
-        <div class="vertical-middle" style="height: 6.5%;">
+        <div class="vertical-middle clickable" style="height: 6.5%;" onclick="$.fn.fullpage.moveTo(5)">
             <div class="col-4" style="text-align: right;">
-                <span class="sidebar-text clickable" onclick="$.fn.fullpage.moveTo(5)">Contact</span>
+                <span class="sidebar-text" id="sidebarText5">Contact</span>
             </div>
             <div class="col-3"></div>
             <div class="col-5" style="text-align: left;">
-                <img class="clickable" src="/static/images/point.png" onclick="$.fn.fullpage.moveTo(5)" style="max-width: 1.3em;">
+                <img src="/static/images/point.png" style="max-width: 1.3em;">
             </div>
         </div>
         <div class="vertical-middle" style="height: 2%;"></div>
@@ -89,7 +89,15 @@
     <script>
         $(function() {
             $('#fullpage').fullpage({
-                verticalCentered: false
+                verticalCentered: false,
+                onLeave: function(origin, destination, direction) {
+                    $('.sidebar-text').css('color', '#FFF4C1');
+                    for (let i = 2; i <= 5; i++) {
+                        if (destination === i) {
+                            $('#sidebarText' + i.toString()).css('color', '#C6A300');
+                        }
+                    }
+                }
             });
         });
     </script>
