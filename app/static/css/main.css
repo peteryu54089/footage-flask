@@ -98,6 +98,16 @@ body {
     z-index: 1;
 }
 
+#navbarNav {
+    background-image: url('/static/images/background.png');
+    height: calc(100% - var(--navbar-height));
+    text-align: center;
+    position: fixed;
+    display: none;
+    width: 100vw;
+    z-index: 1;
+}
+
 @media screen and (max-width: 992px), screen and (max-height: 576px) {
     .sec-1 {
         height: calc(100% - var(--navbar-height));

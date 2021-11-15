@@ -2,10 +2,11 @@
 {% block content %}
     <nav class="navbar">
         <div class="container-fluid">
-            <span class="navbar-brand clickable" onclick="$.fn.fullpage.moveTo(1)">Footage</span>
+            <span class="navbar-brand clickable" onclick="$.fn.fullpage.moveTo(1);closeNavbar()">Footage</span>
             <i id="navbarToggler" class="fa fa-grip-lines clickable" onclick="toggleNavbar()" style="color: #C6A300;font-size: 2em;"></i>
         </div>
     </nav>
+    <div id="navbarNav" class="flex-column"></div>
     <div id="fullpage">
         <div class="section">
             <div class="sec-1"></div>
@@ -115,10 +116,20 @@
 
         function toggleNavbar() {
             if ($('#navbarToggler').hasClass('fa-grip-lines')) {
-                $('#navbarToggler').removeClass('fa-grip-lines').addClass('fa-times');
+                openNavbar();
             } else {
-                $('#navbarToggler').removeClass('fa-times').addClass('fa-grip-lines');
+                closeNavbar();
             }
+        }
+
+        function openNavbar() {
+            $('#navbarToggler').removeClass('fa-grip-lines').addClass('fa-times');
+            $('#navbarNav').show();
+        }
+
+        function closeNavbar() {
+            $('#navbarToggler').removeClass('fa-times').addClass('fa-grip-lines');
+            $('#navbarNav').hide();
         }
     </script>
 {% endblock footer %}
