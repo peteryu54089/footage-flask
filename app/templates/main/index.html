@@ -1,30 +1,45 @@
 {% extends "main/base.html" %}
 {% block content %}
+    <nav class="navbar">
+        <div class="container-fluid">
+            <span class="navbar-brand clickable" onclick="$.fn.fullpage.moveTo(1)">Footage</span>
+        </div>
+    </nav>
     <div id="fullpage">
-        <div class="section sec-1"></div>
-        <div class="section sec-2">
-            <img class="point-left-top" src="/static/images/point.png">
-            <img class="point-right-top" src="/static/images/point.png">
-            <img class="point-left-bottom" src="/static/images/point.png">
-            <img class="point-right-bottom" src="/static/images/point.png">
+        <div class="section">
+            <div class="sec-1"></div>
         </div>
-        <div class="section sec-3">
-            <img class="point-left-top" src="/static/images/point.png">
-            <img class="point-right-top" src="/static/images/point.png">
-            <img class="point-left-bottom" src="/static/images/point.png">
-            <img class="point-right-bottom" src="/static/images/point.png">
+        <div class="section">
+            <div class="sec-2">
+                <img class="point-left-top" src="/static/images/point.png">
+                <img class="point-right-top" src="/static/images/point.png">
+                <img class="point-left-bottom" src="/static/images/point.png">
+                <img class="point-right-bottom" src="/static/images/point.png">
+            </div>
         </div>
-        <div class="section sec-4">
-            <img class="point-left-top" src="/static/images/point.png">
-            <img class="point-right-top" src="/static/images/point.png">
-            <img class="point-left-bottom" src="/static/images/point.png">
-            <img class="point-right-bottom" src="/static/images/point.png">
+        <div class="section">
+            <div class="sec-3">
+                <img class="point-left-top" src="/static/images/point.png">
+                <img class="point-right-top" src="/static/images/point.png">
+                <img class="point-left-bottom" src="/static/images/point.png">
+                <img class="point-right-bottom" src="/static/images/point.png">
+            </div>
         </div>
-        <div class="section sec-5">
-            <img class="point-left-top" src="/static/images/point.png">
-            <img class="point-right-top" src="/static/images/point.png">
-            <img class="point-left-bottom" src="/static/images/point.png">
-            <img class="point-right-bottom" src="/static/images/point.png">
+        <div class="section">
+            <div class="sec-4">
+                <img class="point-left-top" src="/static/images/point.png">
+                <img class="point-right-top" src="/static/images/point.png">
+                <img class="point-left-bottom" src="/static/images/point.png">
+                <img class="point-right-bottom" src="/static/images/point.png">
+            </div>
+        </div>
+        <div class="section">
+            <div class="sec-5">
+                <img class="point-left-top" src="/static/images/point.png">
+                <img class="point-right-top" src="/static/images/point.png">
+                <img class="point-left-bottom" src="/static/images/point.png">
+                <img class="point-right-bottom" src="/static/images/point.png">
+            </div>
         </div>
     </div>
     <div id="sidebar" class="flex-column">
