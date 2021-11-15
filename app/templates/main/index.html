@@ -6,7 +6,31 @@
             <i id="navbarToggler" class="fa fa-grip-lines clickable" onclick="toggleNavbar()" style="color: #C6A300;font-size: 2em;"></i>
         </div>
     </nav>
-    <div id="navbarNav" class="flex-column"></div>
+    <div id="navbarNav" class="flex-column">
+        <div class="vertical-middle" style="height: 25%;">
+            <img class="clickable" src="/static/images/logo.png" onclick="$.fn.fullpage.moveTo(1);closeNavbar()" style="max-width: 13em;">
+        </div>
+        <div class="vertical-middle" style="height: 12%;">
+            <span class="navbar-text clickable" onclick="$.fn.fullpage.moveTo(2);closeNavbar()">About</span>
+        </div>
+        <div class="vertical-middle" style="height: 12%;">
+            <span class="navbar-text clickable" onclick="$.fn.fullpage.moveTo(3);closeNavbar()">Projects</span>
+        </div>
+        <div class="vertical-middle" style="height: 12%;">
+            <span class="navbar-text clickable" onclick="$.fn.fullpage.moveTo(4);closeNavbar()">Q&A</span>
+        </div>
+        <div class="vertical-middle" style="height: 12%;">
+            <span class="navbar-text clickable" onclick="$.fn.fullpage.moveTo(5);closeNavbar()">Contact</span>
+        </div>
+        <div class="vertical-middle" style="height: 27%;">
+            <div class="col-6">
+                <img class="clickable" src="/static/images/point.png" style="max-width: 1.3em;">
+            </div>
+            <div class="col-6">
+                <img class="clickable" src="/static/images/point.png" style="max-width: 1.3em;">
+            </div>
+        </div>
+    </div>
     <div id="fullpage">
         <div class="section">
             <div class="sec-1"></div>
