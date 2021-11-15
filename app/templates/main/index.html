@@ -81,30 +81,13 @@
                 <img class="clickable" src="/static/images/point.png" style="max-width: 1.3em;">
             </div>
         </div>
-        <div class="vertical-middle" style="height: 11%;">
-            <div class="col-7"></div>
-            <div class="col-5" style="text-align: left;">
-                <img class="clickable" src="/static/images/point.png" style="max-width: 1.3em;">
-            </div>
-        </div>
+        <div class="vertical-middle" style="height: 11%;"></div>
         <div class="vertical-middle" style="height: 2%;"></div>
     </div>
 {% endblock content %}
 {% block footer %}
     <script>
         $(function() {
-            if (window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(min-height: 576px)').matches) {
-                $('#sidebar').show();
-            }
-
-            $(window).resize(function() {
-                if (window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(min-height: 576px)').matches) {
-                    $('#sidebar').show();
-                } else {
-                    $('#sidebar').hide();
-                }
-            });
-
             $('#fullpage').fullpage({
                 verticalCentered: false
             });

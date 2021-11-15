@@ -77,9 +77,14 @@ body {
 #sidebar {
     text-align: center;
     position: absolute;
-    display: none;
     height: 100vh;
     width: 15em;
     right: 0;
     top: 0;
+}
+
+@media screen and (max-width: 992px), screen and (max-height: 576px) {
+    #sidebar {
+        display: none;
+    }
 }
