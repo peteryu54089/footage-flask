@@ -3,6 +3,7 @@
     <nav class="navbar">
         <div class="container-fluid">
             <span class="navbar-brand clickable" onclick="$.fn.fullpage.moveTo(1)">Footage</span>
+            <i id="navbarToggler" class="fa fa-grip-lines clickable" onclick="toggleNavbar()" style="color: #C6A300;font-size: 2em;"></i>
         </div>
     </nav>
     <div id="fullpage">
@@ -111,5 +112,13 @@
                 }
             });
         });
+
+        function toggleNavbar() {
+            if ($('#navbarToggler').hasClass('fa-grip-lines')) {
+                $('#navbarToggler').removeClass('fa-grip-lines').addClass('fa-times');
+            } else {
+                $('#navbarToggler').removeClass('fa-times').addClass('fa-grip-lines');
+            }
+        }
     </script>
 {% endblock footer %}
