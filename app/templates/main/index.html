@@ -92,11 +92,7 @@
                 verticalCentered: false,
                 onLeave: function(origin, destination, direction) {
                     $('.sidebar-text').css('color', '#FFF4C1');
-                    for (let i = 2; i <= 5; i++) {
-                        if (destination === i) {
-                            $('#sidebarText' + i.toString()).css('color', '#C6A300');
-                        }
-                    }
+                    $('#sidebarText' + destination).css('color', '#C6A300');
                 }
             });
         });
