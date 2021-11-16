@@ -111,13 +111,8 @@ body {
     z-index: 1;
 }
 
-.navbar-text {
-    font-size: 1.5em;
-    color: #FFF4C1;
-    text-shadow: 2px 2px 4px black;
-    font-family: serif;
-    font-weight: bold;
-    opacity: 0.9;
+.navbar-after {
+    display: none;
 }
 
 @media screen and (max-width: 992px), screen and (max-height: 576px) {

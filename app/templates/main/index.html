@@ -11,29 +11,79 @@
         <img class="point-right-top" src="/static/images/corner.png">
         <img class="point-left-bottom" src="/static/images/corner.png" style="bottom: 0.7em;">
         <img class="point-right-bottom" src="/static/images/corner.png" style="bottom: 0.7em;">
-        <div class="vertical-middle" style="height: 25%;">
-            <img class="clickable" src="/static/images/logo.png" onclick="$.fn.fullpage.moveTo(1);closeNavbar()" style="max-width: 13em;">
+        <div class="vertical-middle" style="height: 9%;"></div>
+        <div class="vertical-middle" style="height: 23%;">
+            <img class="clickable" src="/static/images/logo.png" onclick="$.fn.fullpage.moveTo(1);closeNavbar()" style="max-width: 14em;">
         </div>
-        <div class="vertical-middle" style="height: 12%;">
-            <span class="navbar-text clickable" onclick="$.fn.fullpage.moveTo(2);closeNavbar()">About</span>
-        </div>
-        <div class="vertical-middle" style="height: 12%;">
-            <span class="navbar-text clickable" onclick="$.fn.fullpage.moveTo(3);closeNavbar()">Projects</span>
-        </div>
-        <div class="vertical-middle" style="height: 12%;">
-            <span class="navbar-text clickable" onclick="$.fn.fullpage.moveTo(4);closeNavbar()">Q&A</span>
-        </div>
-        <div class="vertical-middle" style="height: 12%;">
-            <span class="navbar-text clickable" onclick="$.fn.fullpage.moveTo(5);closeNavbar()">Contact</span>
-        </div>
-        <div class="vertical-middle" style="height: 27%;">
-            <div class="col-6">
-                <img class="clickable" src="/static/images/fb-before.png" style="max-width: 1.3em;">
+        <div class="vertical-middle" style="height: 11%;">
+            <div class="col-2"></div>
+            <div class="col-2">
+                <img class="navbar-after navbar-after-2 drop-shadow" src="/static/images/bar-left.png" style="max-width: 3.5em">
             </div>
-            <div class="col-6">
-                <img class="clickable" src="/static/images/ig-before.png" style="max-width: 1.3em;">
+            <div class="col-4">
+                <img class="navbar-before navbar-before-2 clickable drop-shadow" src="/static/images/about-before.png" onclick="$.fn.fullpage.moveTo(2);closeNavbar()" style="max-width: 6em">
+                <img class="navbar-after navbar-after-2 clickable drop-shadow" src="/static/images/about-after.png" onclick="$.fn.fullpage.moveTo(2);closeNavbar()" style="max-width: 6em">
             </div>
+            <div class="col-2">
+                <img class="navbar-after navbar-after-2 drop-shadow" src="/static/images/bar-right.png" style="max-width: 3.5em">
+            </div>
+            <div class="col-2"></div>
         </div>
+        <div class="vertical-middle" style="height: 11%;">
+            <div class="col-2"></div>
+            <div class="col-2">
+                <img class="navbar-after navbar-after-3 drop-shadow" src="/static/images/bar-left.png" style="max-width: 3.5em">
+            </div>
+            <div class="col-4">
+                <img class="navbar-before navbar-before-3 clickable drop-shadow" src="/static/images/projects-before.png" onclick="$.fn.fullpage.moveTo(3);closeNavbar()" style="max-width: 7em">
+                <img class="navbar-after navbar-after-3 clickable drop-shadow" src="/static/images/projects-after.png" onclick="$.fn.fullpage.moveTo(3);closeNavbar()" style="max-width: 7em">
+            </div>
+            <div class="col-2">
+                <img class="navbar-after navbar-after-3 drop-shadow" src="/static/images/bar-right.png" style="max-width: 3.5em">
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="vertical-middle" style="height: 11%;">
+            <div class="col-2"></div>
+            <div class="col-2">
+                <img class="navbar-after navbar-after-4 drop-shadow" src="/static/images/bar-left.png" style="max-width: 3.5em">
+            </div>
+            <div class="col-4">
+                <img class="navbar-before navbar-before-4 clickable drop-shadow" src="/static/images/qna-before.png" onclick="$.fn.fullpage.moveTo(4);closeNavbar()" style="max-width: 4.5em">
+                <img class="navbar-after navbar-after-4 clickable drop-shadow" src="/static/images/qna-after.png" onclick="$.fn.fullpage.moveTo(4);closeNavbar()" style="max-width: 4.5em">
+            </div>
+            <div class="col-2">
+                <img class="navbar-after navbar-after-4 drop-shadow" src="/static/images/bar-right.png" style="max-width: 3.5em">
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="vertical-middle" style="height: 11%;">
+            <div class="col-2"></div>
+            <div class="col-2">
+                <img class="navbar-after navbar-after-5 drop-shadow" src="/static/images/bar-left.png" style="max-width: 3.5em">
+            </div>
+            <div class="col-4">
+                <img class="navbar-before navbar-before-5 clickable drop-shadow" src="/static/images/contact-before.png" onclick="$.fn.fullpage.moveTo(5);closeNavbar()" style="max-width: 7em">
+                <img class="navbar-after navbar-after-5 clickable drop-shadow" src="/static/images/contact-after.png" onclick="$.fn.fullpage.moveTo(5);closeNavbar()" style="max-width: 7em">
+            </div>
+            <div class="col-2">
+                <img class="navbar-after navbar-after-5 drop-shadow" src="/static/images/bar-right.png" style="max-width: 3.5em">
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="vertical-middle" style="height: 17%;">
+            <div class="col-3"></div>
+            <div class="col-3">
+                <img class="navbar-fb navbar-before navbar-before-fb clickable drop-shadow" src="/static/images/fb-before.png" style="max-width: 3em;">
+                <img class="navbar-fb navbar-after navbar-after-fb clickable drop-shadow" src="/static/images/fb-after.png" style="max-width: 3em;">
+            </div>
+            <div class="col-3">
+                <img class="navbar-ig navbar-before navbar-before-ig clickable drop-shadow" src="/static/images/ig-before.png" style="max-width: 3em;">
+                <img class="navbar-ig navbar-after navbar-after-ig clickable drop-shadow" src="/static/images/ig-after.png" style="max-width: 3em;">
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="vertical-middle" style="height: 7%;"></div>
     </div>
     <div id="fullpage">
         <div class="section">
@@ -166,22 +216,37 @@
 {% endblock content %}
 {% block footer %}
     <script>
+        var currentPage = 1;
         var isLargeScreen = window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(min-height: 576px)').matches;
 
         $(function() {
+            $(window).resize(function() {
+                isLargeScreen = window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(min-height: 576px)').matches;
+                updateBars();
+            });
+
             $('#fullpage').fullpage({
                 verticalCentered: false,
                 onLeave: function(origin, destination, direction) {
-                    if (destination > 1 && isLargeScreen) {
-                        $('#sidebar').show('slow');
-                    } else {
-                        $('#sidebar').hide();
-                    }
-                    $('.sidebar-before').show();
-                    $('.sidebar-after').hide();
-                    $('.sidebar-after-' + destination).show();
-                    $('.sidebar-before-' + destination).hide();
+                    currentPage = destination;
+                    updateBars();
                 }
+            });
+
+            $('.navbar-fb').hover(function() {
+                $('.navbar-before-fb').hide();
+                $('.navbar-after-fb').show();
+            }, function() {
+                $('.navbar-after-fb').hide();
+                $('.navbar-before-fb').show();
+            });
+
+            $('.navbar-ig').hover(function() {
+                $('.navbar-before-ig').hide();
+                $('.navbar-after-ig').show();
+            }, function() {
+                $('.navbar-after-ig').hide();
+                $('.navbar-before-ig').show();
             });
 
             $('.sidebar-fb').hover(function() {
@@ -217,6 +282,31 @@
         function closeNavbar() {
             $('#navbarToggler').removeClass('fa-times').addClass('fa-grip-lines');
             $('#navbarNav').hide();
+        }
+
+        function updateBars() {
+            $('.sidebar-before').show();
+            $('.sidebar-after').hide();
+            $('.sidebar-after-' + currentPage).show();
+            $('.sidebar-before-' + currentPage).hide();
+
+            $('.navbar-before').show();
+            $('.navbar-after').hide();
+            $('.navbar-after-' + currentPage).show();
+            $('.navbar-before-' + currentPage).hide();
+
+            if (isLargeScreen) {
+                closeNavbar();
+                $('.navbar').hide();
+                if (currentPage > 1) {
+                    $('#sidebar').show('slow');
+                } else {
+                    $('#sidebar').hide();
+                }
+            } else {
+                $('#sidebar').hide();
+                $('.navbar').show();
+            }
         }
     </script>
 {% endblock footer %}
