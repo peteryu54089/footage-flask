@@ -12,7 +12,10 @@ body {
 }
 
 .sec-1 {
-    background-image: url('/static/images/background.png');
+    background-image: url('/static/images/home.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: 100%;
 }
 
@@ -68,28 +71,28 @@ body {
     cursor: pointer;
 }
 
+.drop-shadow {
+    filter: drop-shadow(0.15em 0.2em 0.1em black);
+}
+
 .vertical-middle {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.sidebar-text {
-    font-size: 1.5em;
-    color: #FFF4C1;
-    text-shadow: 2px 2px 4px black;
-    font-family: serif;
-    font-weight: bold;
-    opacity: 0.9;
-}
-
 #sidebar {
     text-align: center;
     position: absolute;
+    display: none;
     height: 100vh;
     width: 15em;
     right: 0;
     top: 0;
+}
+
+.sidebar-after {
+    display: none;
 }
 
 .navbar {
