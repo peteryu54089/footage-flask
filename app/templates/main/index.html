@@ -2,11 +2,15 @@
 {% block content %}
     <nav class="navbar">
         <div class="container-fluid">
-            <span class="navbar-brand clickable" onclick="$.fn.fullpage.moveTo(1);closeNavbar()">Footage</span>
+            <img class="navbar-brand clickable drop-shadow" src="/static/images/logo-mobile.png" onclick="$.fn.fullpage.moveTo(1);closeNavbar()" style="max-width: 6em;">
             <i id="navbarToggler" class="fa fa-grip-lines clickable" onclick="toggleNavbar()" style="color: #E9DCB9;font-size: 2em;"></i>
         </div>
     </nav>
     <div id="navbarNav" class="flex-column">
+        <img class="point-left-top" src="/static/images/corner.png">
+        <img class="point-right-top" src="/static/images/corner.png">
+        <img class="point-left-bottom" src="/static/images/corner.png" style="bottom: 0.7em;">
+        <img class="point-right-bottom" src="/static/images/corner.png" style="bottom: 0.7em;">
         <div class="vertical-middle" style="height: 25%;">
             <img class="clickable" src="/static/images/logo.png" onclick="$.fn.fullpage.moveTo(1);closeNavbar()" style="max-width: 13em;">
         </div>
@@ -162,11 +166,13 @@
 {% endblock content %}
 {% block footer %}
     <script>
+        var isLargeScreen = window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(min-height: 576px)').matches;
+
         $(function() {
             $('#fullpage').fullpage({
                 verticalCentered: false,
                 onLeave: function(origin, destination, direction) {
-                    if (destination > 1 && window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(min-height: 576px)').matches) {
+                    if (destination > 1 && isLargeScreen) {
                         $('#sidebar').show('slow');
                     } else {
                         $('#sidebar').hide();
