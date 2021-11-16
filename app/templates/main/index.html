@@ -229,6 +229,15 @@
                 verticalCentered: false,
                 onLeave: function(origin, destination, direction) {
                     currentPage = destination;
+                    $('.sidebar-before').show();
+                    $('.sidebar-after').hide();
+                    $('.sidebar-after-' + currentPage).show();
+                    $('.sidebar-before-' + currentPage).hide();
+
+                    $('.navbar-before').show();
+                    $('.navbar-after').hide();
+                    $('.navbar-after-' + currentPage).show();
+                    $('.navbar-before-' + currentPage).hide();
                     updateBars();
                 }
             });
@@ -285,16 +294,6 @@
         }
 
         function updateBars() {
-            $('.sidebar-before').show();
-            $('.sidebar-after').hide();
-            $('.sidebar-after-' + currentPage).show();
-            $('.sidebar-before-' + currentPage).hide();
-
-            $('.navbar-before').show();
-            $('.navbar-after').hide();
-            $('.navbar-after-' + currentPage).show();
-            $('.navbar-before-' + currentPage).hide();
-
             if (isLargeScreen) {
                 closeNavbar();
                 $('.navbar').hide();
