@@ -3,6 +3,7 @@
     <nav class="navbar">
         <div class="container-fluid">
             <img class="navbar-brand clickable drop-shadow" src="/static/images/logo-mobile.png" onclick="$.fn.fullpage.moveTo(1);closeNavbar()" style="max-width: 6em;">
+            <h4 id="navbarText" class="ms-auto" style="margin: 0 0.6em 0 0;">Home</h4>
             <i id="navbarToggler" class="fa fa-grip-lines clickable" onclick="toggleNavbar()" style="color: #E9DCB9;font-size: 2em;"></i>
         </div>
     </nav>
@@ -49,8 +50,8 @@
                 <img class="navbar-after navbar-after-4 drop-shadow" src="/static/images/bar-left.png" style="max-width: 3.5em">
             </div>
             <div class="col-4">
-                <img class="navbar-before navbar-before-4 clickable drop-shadow" src="/static/images/qna-before.png" onclick="$.fn.fullpage.moveTo(4);closeNavbar()" style="max-width: 4.5em">
-                <img class="navbar-after navbar-after-4 clickable drop-shadow" src="/static/images/qna-after.png" onclick="$.fn.fullpage.moveTo(4);closeNavbar()" style="max-width: 4.5em">
+                <img class="navbar-before navbar-before-4 clickable drop-shadow" src="/static/images/qna-before.png" onclick="$.fn.fullpage.moveTo(4);closeNavbar()" style="max-width: 4.2em">
+                <img class="navbar-after navbar-after-4 clickable drop-shadow" src="/static/images/qna-after.png" onclick="$.fn.fullpage.moveTo(4);closeNavbar()" style="max-width: 4.2em">
             </div>
             <div class="col-2">
                 <img class="navbar-after navbar-after-4 drop-shadow" src="/static/images/bar-right.png" style="max-width: 3.5em">
@@ -217,6 +218,7 @@
 {% block footer %}
     <script>
         var currentPage = 1;
+        var navbarTexts = ['Menu', 'Home', 'About', 'Projects', 'Q&A', 'Contact'];
         var isLargeScreen = window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(min-height: 576px)').matches;
 
         $(function() {
@@ -284,11 +286,13 @@
         }
 
         function openNavbar() {
+            $('#navbarText').text(navbarTexts[0]);
             $('#navbarToggler').removeClass('fa-grip-lines').addClass('fa-times');
             $('#navbarNav').show();
         }
 
         function closeNavbar() {
+            $('#navbarText').text(navbarTexts[currentPage]);
             $('#navbarToggler').removeClass('fa-times').addClass('fa-grip-lines');
             $('#navbarNav').hide();
         }
@@ -305,6 +309,9 @@
             } else {
                 $('#sidebar').hide();
                 $('.navbar').show();
+                if ($('#navbarText').text() !== navbarTexts[0]) {
+                    $('#navbarText').text(navbarTexts[currentPage]);
+                }
             }
         }
     </script>
