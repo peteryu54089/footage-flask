@@ -1,5 +1,15 @@
 {% extends "main/base.html" %}
 {% block content %}
+    <div id="hintWrapper" class="flex-column">
+        <div class="vertical-middle" style="height: 30%;"></div>
+        <div class="vertical-middle" style="height: 30%;">
+            <img src="/static/images/rotate-turn-s.gif" style="max-width: 7em;">
+        </div>
+        <div class="vertical-middle" style="height: 10%;">
+            <span style="color: #E9DCB9;">請使用直式觀看，以獲得最佳體驗</span>
+        </div>
+        <div class="vertical-middle" style="height: 30%;"></div>
+    </div>
     <nav class="navbar">
         <div class="container-fluid">
             <img class="navbar-brand clickable drop-shadow" src="/static/images/logo-mobile.png" onclick="$.fn.fullpage.moveTo(1);closeNavbar()" style="max-width: 6em;">
@@ -219,11 +229,11 @@
     <script>
         var currentPage = 1;
         var navbarTexts = ['Menu', 'Home', 'About', 'Projects', 'Q&A', 'Contact'];
-        var isLargeScreen = window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(min-height: 576px)').matches;
+        var isLargeScreen = window.matchMedia('(min-width: 992px)').matches;
 
         $(function() {
             $(window).resize(function() {
-                isLargeScreen = window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(min-height: 576px)').matches;
+                isLargeScreen = window.matchMedia('(min-width: 992px)').matches;
                 updateBars();
             });
 

@@ -64,6 +64,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1.6em;
     left: 0.7em;
     top: 0.7em;
+    z-index: 1;
 }
 
 .point-right-top {
@@ -71,6 +72,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1.6em;
     right: 0.7em;
     top: 0.7em;
+    z-index: 1;
 }
 
 .point-left-bottom {
@@ -78,6 +80,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1.6em;
     left: 0.7em;
     bottom: 0.7em;
+    z-index: 1;
 }
 
 .point-right-bottom {
@@ -85,6 +88,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1.6em;
     right: 0.7em;
     bottom: 0.7em;
+    z-index: 1;
 }
 
 .clickable {
@@ -118,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
     background-image: url('/static/images/background.png');
     display: none;
-    z-index: 1;
+    z-index: 2;
 }
 
 #navbarNav {
@@ -128,14 +132,23 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     display: none;
     width: 100vw;
-    z-index: 1;
+    z-index: 2;
 }
 
 .navbar-after {
     display: none;
 }
 
-@media screen and (max-width: 992px), screen and (max-height: 576px) {
+#hintWrapper {
+    background-color: #165a72;
+    position: fixed;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    z-index: 3;
+}
+
+@media screen and (max-width: 992px) {
     .sec-1 {
         height: calc(100% - var(--navbar-height));
     }
@@ -169,6 +182,12 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .navbar {
+        display: block;
+    }
+}
+
+@media screen and (max-height: 576px) {
+    #hintWrapper {
         display: block;
     }
 }
