@@ -18,10 +18,10 @@
         </div>
     </nav>
     <div id="navbarNav" class="flex-column">
-        <img class="point-left-top" src="/static/images/corner.png">
-        <img class="point-right-top" src="/static/images/corner.png">
-        <img class="point-left-bottom" src="/static/images/corner.png" style="bottom: 0.7em;">
-        <img class="point-right-bottom" src="/static/images/corner.png" style="bottom: 0.7em;">
+        <img class="corner-left-top" src="/static/images/corner.png">
+        <img class="corner-right-top" src="/static/images/corner.png">
+        <img class="corner-left-bottom" src="/static/images/corner.png" style="bottom: 0.7em;">
+        <img class="corner-right-bottom" src="/static/images/corner.png" style="bottom: 0.7em;">
         <div class="vertical-middle" style="height: 9%;"></div>
         <div class="vertical-middle" style="height: 23%;">
             <img class="clickable" src="/static/images/logo.png" onclick="$.fn.fullpage.moveTo(1);closeNavbar()" style="max-width: 14em;">
@@ -102,38 +102,38 @@
         </div>
         <div class="section">
             <div class="sec-2">
-                <img class="point-left-top" src="/static/images/corner.png">
-                <img class="point-right-top" src="/static/images/corner.png">
-                <img class="point-left-bottom" src="/static/images/corner.png">
-                <img class="point-right-bottom" src="/static/images/corner.png">
+                <img class="corner-left-top" src="/static/images/corner.png">
+                <img class="corner-right-top" src="/static/images/corner.png">
+                <img class="corner-left-bottom" src="/static/images/corner.png">
+                <img class="corner-right-bottom" src="/static/images/corner.png">
             </div>
         </div>
         <div class="section">
             <div class="sec-3 flex-column">
                 <div class="row" style="height: 100%;">
-                    <div class="col-12 col-lg-6" style="background-image: url('/static/images/projects-left.png');background-repeat: no-repeat;background-position: center;background-size: cover;"></div>
-                    <div class="col-12 col-lg-6" style="background-image: url('/static/images/projects-right.png');background-repeat: no-repeat;background-position: center;background-size: cover;"></div>
+                    <div class="col-12 col-lg-6 projects-1"></div>
+                    <div class="col-12 col-lg-6 projects-2"></div>
                 </div>
-                <img class="point-left-top" src="/static/images/corner.png">
-                <img class="point-right-top" src="/static/images/corner.png">
-                <img class="point-left-bottom" src="/static/images/corner.png">
-                <img class="point-right-bottom" src="/static/images/corner.png">
+                <img class="corner-left-top" src="/static/images/corner.png">
+                <img class="corner-right-top" src="/static/images/corner.png">
+                <img class="corner-left-bottom" src="/static/images/corner.png">
+                <img class="corner-right-bottom" src="/static/images/corner.png">
             </div>
         </div>
         <div class="section">
             <div class="sec-4">
-                <img class="point-left-top" src="/static/images/corner.png">
-                <img class="point-right-top" src="/static/images/corner.png">
-                <img class="point-left-bottom" src="/static/images/corner.png">
-                <img class="point-right-bottom" src="/static/images/corner.png">
+                <img class="corner-left-top" src="/static/images/corner.png">
+                <img class="corner-right-top" src="/static/images/corner.png">
+                <img class="corner-left-bottom" src="/static/images/corner.png">
+                <img class="corner-right-bottom" src="/static/images/corner.png">
             </div>
         </div>
         <div class="section">
             <div class="sec-5">
-                <img class="point-left-top" src="/static/images/corner.png">
-                <img class="point-right-top" src="/static/images/corner.png">
-                <img class="point-left-bottom" src="/static/images/corner.png">
-                <img class="point-right-bottom" src="/static/images/corner.png">
+                <img class="corner-left-top" src="/static/images/corner.png">
+                <img class="corner-right-top" src="/static/images/corner.png">
+                <img class="corner-left-bottom" src="/static/images/corner.png">
+                <img class="corner-right-bottom" src="/static/images/corner.png">
             </div>
         </div>
     </div>
@@ -230,103 +230,5 @@
     </div>
 {% endblock content %}
 {% block footer %}
-    <script>
-        var currentPage = 1;
-        var navbarTexts = ['Menu', 'Home', 'About', 'Projects', 'Q&A', 'Contact'];
-        var isLargeScreen = window.matchMedia('(min-width: 992px)').matches;
-
-        $(function() {
-            $(window).resize(function() {
-                isLargeScreen = window.matchMedia('(min-width: 992px)').matches;
-                updateBars();
-            });
-
-            $('#fullpage').fullpage({
-                verticalCentered: false,
-                onLeave: function(origin, destination, direction) {
-                    currentPage = destination;
-                    $('.sidebar-before').show();
-                    $('.sidebar-after').hide();
-                    $('.sidebar-after-' + currentPage).show();
-                    $('.sidebar-before-' + currentPage).hide();
-
-                    $('.navbar-before').show();
-                    $('.navbar-after').hide();
-                    $('.navbar-after-' + currentPage).show();
-                    $('.navbar-before-' + currentPage).hide();
-                    updateBars();
-                }
-            });
-
-            $('.navbar-fb').hover(function() {
-                $('.navbar-before-fb').hide();
-                $('.navbar-after-fb').show();
-            }, function() {
-                $('.navbar-after-fb').hide();
-                $('.navbar-before-fb').show();
-            });
-
-            $('.navbar-ig').hover(function() {
-                $('.navbar-before-ig').hide();
-                $('.navbar-after-ig').show();
-            }, function() {
-                $('.navbar-after-ig').hide();
-                $('.navbar-before-ig').show();
-            });
-
-            $('.sidebar-fb').hover(function() {
-                $('.sidebar-before-fb').hide();
-                $('.sidebar-after-fb').show();
-            }, function() {
-                $('.sidebar-after-fb').hide();
-                $('.sidebar-before-fb').show();
-            });
-
-            $('.sidebar-ig').hover(function() {
-                $('.sidebar-before-ig').hide();
-                $('.sidebar-after-ig').show();
-            }, function() {
-                $('.sidebar-after-ig').hide();
-                $('.sidebar-before-ig').show();
-            });
-        });
-
-        function toggleNavbar() {
-            if ($('#navbarToggler').hasClass('fa-grip-lines')) {
-                openNavbar();
-            } else {
-                closeNavbar();
-            }
-        }
-
-        function openNavbar() {
-            $('#navbarText').text(navbarTexts[0]);
-            $('#navbarToggler').removeClass('fa-grip-lines').addClass('fa-times');
-            $('#navbarNav').show();
-        }
-
-        function closeNavbar() {
-            $('#navbarText').text(navbarTexts[currentPage]);
-            $('#navbarToggler').removeClass('fa-times').addClass('fa-grip-lines');
-            $('#navbarNav').hide();
-        }
-
-        function updateBars() {
-            if (isLargeScreen) {
-                closeNavbar();
-                $('.navbar').hide();
-                if (currentPage > 1) {
-                    $('#sidebar').show('slow');
-                } else {
-                    $('#sidebar').hide();
-                }
-            } else {
-                $('#sidebar').hide();
-                $('.navbar').show();
-                if ($('#navbarText').text() !== navbarTexts[0]) {
-                    $('#navbarText').text(navbarTexts[currentPage]);
-                }
-            }
-        }
-    </script>
+    <script src="/static/js/main.js"></script>
 {% endblock footer %}

@@ -13,6 +13,8 @@
     src: url('/static/fonts/hiragino Sans W6.otf') format('opentype');
 }
 
+/******************** main ********************/
+
 :root {
     --navbar-height: 3em;
 }
@@ -26,6 +28,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'bogart-regular-trial';
     color: #E9DCB9;
 }
+
+/******************** section ********************/
 
 .section {
     height: 100vh;
@@ -59,7 +63,23 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
 }
 
-.point-left-top {
+.projects-1 {
+    background-image: url('/static/images/projects-1.jpg'), url('/static/images/projects-1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.projects-2 {
+    background-image: url('/static/images/projects-2.jpg'), url('/static/images/projects-2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/******************** corner ********************/
+
+.corner-left-top {
     position: absolute;
     max-width: 1.6em;
     left: 0.7em;
@@ -67,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
 }
 
-.point-right-top {
+.corner-right-top {
     position: absolute;
     max-width: 1.6em;
     right: 0.7em;
@@ -75,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
 }
 
-.point-left-bottom {
+.corner-left-bottom {
     position: absolute;
     max-width: 1.6em;
     left: 0.7em;
@@ -83,13 +103,15 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
 }
 
-.point-right-bottom {
+.corner-right-bottom {
     position: absolute;
     max-width: 1.6em;
     right: 0.7em;
     bottom: 0.7em;
     z-index: 1;
 }
+
+/******************** general ********************/
 
 .clickable {
     cursor: pointer;
@@ -105,6 +127,8 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
+/******************** sidebar ********************/
+
 #sidebar {
     text-align: center;
     position: absolute;
@@ -118,6 +142,8 @@ h1, h2, h3, h4, h5, h6 {
 .sidebar-after {
     display: none;
 }
+
+/******************** navbar ********************/
 
 .navbar {
     background-image: url('/static/images/background.png');
@@ -138,6 +164,8 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-after {
     display: none;
 }
+
+/******************** other ********************/
 
 #hintWrapper {
     background-color: #165a72;
@@ -169,11 +197,11 @@ h1, h2, h3, h4, h5, h6 {
         height: calc(100% - var(--navbar-height));
     }
 
-    .point-left-bottom {
+    .corner-left-bottom {
         bottom: calc(0.7em + var(--navbar-height));
     }
     
-    .point-right-bottom {
+    .corner-right-bottom {
         bottom: calc(0.7em + var(--navbar-height));
     }
 
