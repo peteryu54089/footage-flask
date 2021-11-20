@@ -14,6 +14,30 @@ def admin():
         return redirect(url_for('login'))
     return render_template('main/admin.html')
 
+@app.route('/about')
+def about():
+    if not current_user.is_active:
+        return redirect(url_for('login'))
+    return render_template('main/about.html')
+
+@app.route('/projects')
+def projects():
+    if not current_user.is_active:
+        return redirect(url_for('login'))
+    return render_template('main/projects.html')
+
+@app.route('/qna')
+def qna():
+    if not current_user.is_active:
+        return redirect(url_for('login'))
+    return render_template('main/qna.html')
+
+@app.route('/contact')
+def contact():
+    if not current_user.is_active:
+        return redirect(url_for('login'))
+    return render_template('main/contact.html')
+
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     form = FormLogin()
