@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'bogart-regular-trial';
+    src: url('/static/fonts/Bogart-Regular-trial.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'hiragino-sans-w3';
+    src: url('/static/fonts/hiragino Sans W3.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'hiragino-sans-w6';
+    src: url('/static/fonts/hiragino Sans W6.otf') format('opentype');
+}
+
+body {
+    background-image: url('/static/images/background.png');
+    background-color: #165a72;
+}
+
+.vertical-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hintWrapper {
+    background-color: #165a72;
+    position: fixed;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    z-index: 3;
+}
+
+@media screen and (max-height: 576px) {
+    #hintWrapper {
+        display: block;
+    }
+}

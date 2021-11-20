@@ -1,6 +1,11 @@
 {% extends "main/base.html" %}
+{% block head %}
+    {{ super() }}
+{% endblock head %}
 {% block title %} - Admin{% endblock title %}
 {% block content %}
 Admin
 <a href="{{ url_for('logout') }}">Log out</a>
 {% endblock content %}
+{% block footer %}
+{% endblock footer %}
