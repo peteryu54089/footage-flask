@@ -1,8 +1,8 @@
-from app import app
-from flask import render_template, flash, redirect, url_for
+from app import app, db
+from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user
 from app.forms.main import FormLogin
-from app.models.main import User
+from app.models.main import User, Contact
 
 @app.route('/')
 def index():
@@ -32,11 +32,18 @@ def qna():
         return redirect(url_for('login'))
     return render_template('main/qna.html')
 
-@app.route('/contact')
+@app.route('/contact', methods = ['GET', 'POST'])
 def contact():
     if not current_user.is_active:
         return redirect(url_for('login'))
-    return render_template('main/contact.html')
+    if request.method == 'POST':
+        Contact.query.delete()
+        contacts = list(request.form.listvalues())[:-1]
+        for i in range(0, len(contacts), 2):
+            db.session.add(Contact(title = contacts[i][0], content = contacts[i + 1][0]))
+        db.session.commit()
+        flash('Saved successfully')
+    return render_template('main/contact.html', contacts = Contact.query.all())
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():

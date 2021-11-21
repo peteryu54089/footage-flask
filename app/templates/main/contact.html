@@ -11,6 +11,7 @@
             filter: drop-shadow(0.05em 0.05em 0.05em black);
             font-family: 'bogart-regular-trial';
             color: #E9DCB9;
+            margin: 0;
         }
 
         .form-group {
@@ -45,8 +46,8 @@
         <div class="vertical-middle">
             <div class="col-1 col-lg-3"></div>
             <div class="col-10 col-lg-6">
-                <form action="contact" method="post" class="form flex-column" role="form">
-                    <div class="row">
+                <form action="{{ url_for('contact') }}" method="post" class="form flex-column" role="form">
+                    <div class="row" style="text-align: center;">
                         <div class="col-1"></div>
                         <div class="col-3">
                             <h5>title</h5>
@@ -55,39 +56,45 @@
                             <h5>content</h5>
                         </div>
                     </div>
+                    {% for contact in contacts %}
+                        <div class="row">
+                            <div class="col-1 vertical-middle">
+                                <i class="fa fa-times clickable" onclick="$(this).parent().parent().remove()" style="color: red;font-size: 1.5em;"></i>
+                            </div>
+                            <div class="col-3 form-group required">
+                                <input class="form-control" id="title{{ contact.id }}" maxlength="50" minlength="1" name="title{{ contact.id }}" type="text" style="width: 100%;" value="{{ contact.title }}" required>
+                            </div>
+                            <div class="col-8 form-group required">
+                                <input class="form-control" id="content{{ contact.id }}" maxlength="50" minlength="1" name="contact{{ contact.id }}" type="text" style="width: 100%;" value="{{ contact.content }}" required>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="row" id="contactBaseline" style="height: 5em;"></div>
                     <div class="row">
-                        <div class="col-1 vertical-middle">
-                            <i class="fa fa-times clickable" onclick="delContact()" style="color: red;font-size: 1.5em;"></i>
-                        </div>
-                        <div class="col-3 form-group required">
-                            <input class="form-control" id="phone" maxlength="50" minlength="1" name="phone" type="text" style="width: 100%;" value="電話" required>
-                        </div>
-                        <div class="col-8 form-group required">
-                            <input class="form-control" id="phoneValue" maxlength="50" minlength="1" name="phoneValue" type="text" style="width: 100%;" value="0987654321" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-1 vertical-middle">
-                            <i class="fa fa-times clickable" onclick="delContact()" style="color: red;font-size: 1.5em;"></i>
-                        </div>
-                        <div class="col-3 form-group required">
-                            <input class="form-control" id="email" maxlength="50" minlength="1" name="email" type="text" style="width: 100%;" value="E-mail" required>
-                        </div>
-                        <div class="col-8 form-group required">
-                            <input class="form-control" id="emailValue" maxlength="50" minlength="1" name="emailValue" type="text" style="width: 100%;" value="footage@footagestudio.com" required>
-                        </div>
-                    </div>
-                    <div class="row baseline" style="height: 5em;"></div>
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-4 form-group">
+                        <div class="col-3"></div>
+                        <div class="col-3 form-group">
                             <input class="btn btn-default btn-primary" id="newBtn" type="button" value="new" style="width: 100%;" onclick="addContact()">
                         </div>
-                        <div class="col-2"></div>
-                        <div class="col-4 form-group">
+                        <div class="col-3 form-group">
                             <input class="btn btn-default btn-success" id="submit" name="submit" type="submit" value="save" style="width: 100%;">
                         </div>
-                        <div class="col-1"></div>
+                        <div class="col-3"></div>
+                    </div>
+                    <div class="row" style="height: 5em;"></div>
+                    <div class="row" style="height: 3.6em;">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    <div class="alert alert-success" role="alert" style="margin: 0;text-align: center;">
+                                        {% for message in messages %}
+                                            <span>{{ message }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+                        <div class="col-2"></div>
                     </div>
                     <div class="row" style="height: 5em;"></div>
                 </form>
@@ -102,22 +109,18 @@
 
         function addContact() {
             $('\
-                <div id="contact' + contactIdx + '" class="row">\
+                <div class="row">\
                     <div class="col-1 vertical-middle">\
-                        <i class="fa fa-times clickable" onclick="delContact(' + contactIdx + ')" style="color: red;font-size: 1.5em;"></i>\
+                        <i class="fa fa-times clickable" onclick="$(this).parent().parent().remove()" style="color: red;font-size: 1.5em;"></i>\
                     </div>\
                     <div class="col-3 form-group required">\
-                        <input class="form-control" id="title' + contactIdx + '" maxlength="50" minlength="1" name="title' + contactIdx + '" type="text" style="width: 100%;" required>\
+                        <input class="form-control" id="newTitle' + contactIdx + '" maxlength="50" minlength="1" name="newTitle' + contactIdx + '" type="text" style="width: 100%;" required>\
                     </div>\
                     <div class="col-8 form-group required">\
-                        <input class="form-control" id="content' + contactIdx + '" maxlength="50" minlength="1" name="content' + contactIdx + '" type="text" style="width: 100%;" required>\
+                        <input class="form-control" id="newContent' + contactIdx + '" maxlength="50" minlength="1" name="newContent' + contactIdx + '" type="text" style="width: 100%;" required>\
                     </div>\
-                </div>').insertBefore('.baseline');
+                </div>').insertBefore('#contactBaseline');
             contactIdx++;
-        }
-
-        function delContact(idx) {
-            $('#contact' + idx).remove();
         }
     </script>
 {% endblock footer %}

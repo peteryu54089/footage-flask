@@ -18,8 +18,7 @@ if not database_exists(engine.url):
     create_database(engine.url)
 db = SQLAlchemy(app)
 
-from app.models.main import User
-from app.models.main import Contact
+from app.models.main import User, Contact
 
 db.create_all()
 db.session.commit()
