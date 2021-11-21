@@ -19,3 +19,8 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return 'username: %s' % (self.username)
+
+class Contact(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(50), nullable = False)
+    content = db.Column(db.String(50), nullable = False)

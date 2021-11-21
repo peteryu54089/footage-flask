@@ -19,6 +19,7 @@ if not database_exists(engine.url):
 db = SQLAlchemy(app)
 
 from app.models.main import User
+from app.models.main import Contact
 
 db.create_all()
 db.session.commit()
