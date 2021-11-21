@@ -37,61 +37,87 @@
             </div>
         </div>
     </nav>
-    <div class="flex-column" style="height: calc(100% - var(--navbar-height));">
-        <div class="vertical-middle" style="height: 3%;"></div>
-        <div class="vertical-middle" style="height: 23%;">
+    <div class="flex-column" style="top: var(--navbar-height);">
+        <div class="vertical-middle" style="height: 1.3em;"></div>
+        <div class="vertical-middle" style="height: 10.8em;">
             <h1 style="color: #D8BF69;filter: drop-shadow(0.05em 0.05em 0.05em black);font-family: 'bogart-regular-trial';">Contact</h1>
         </div>
-        <div class="vertical-middle" style="height: 48%;">
-            <div class="col-1 col-lg-3" style="height: 100%;"></div>
-            <div class="col-10 col-lg-6" style="height: 100%;">
-                <form action="contact" method="post" class="form flex-column" role="form" style="height: 100%;">
+        <div class="vertical-middle">
+            <div class="col-1 col-lg-3"></div>
+            <div class="col-10 col-lg-6">
+                <form action="contact" method="post" class="form flex-column" role="form">
                     <div class="row">
+                        <div class="col-1"></div>
                         <div class="col-3">
                             <h5>title</h5>
                         </div>
-                        <div class="col-9">
+                        <div class="col-8">
                             <h5>content</h5>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-3 form-group required">
-                            <input class="form-control" id="address" maxlength="50" minlength="1" name="address" type="text" style="width: 100%;" value="地址" required>
+                        <div class="col-1 vertical-middle">
+                            <i class="fa fa-times clickable" onclick="delContact()" style="color: red;font-size: 1.5em;"></i>
                         </div>
-                        <div class="col-9 form-group required">
-                            <input class="form-control" id="addressValue" maxlength="50" minlength="1" name="addressValue" type="text" style="width: 100%;" value="臺北市, 臺灣" required>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-3 form-group required">
                             <input class="form-control" id="phone" maxlength="50" minlength="1" name="phone" type="text" style="width: 100%;" value="電話" required>
                         </div>
-                        <div class="col-9 form-group required">
+                        <div class="col-8 form-group required">
                             <input class="form-control" id="phoneValue" maxlength="50" minlength="1" name="phoneValue" type="text" style="width: 100%;" value="0987654321" required>
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-1 vertical-middle">
+                            <i class="fa fa-times clickable" onclick="delContact()" style="color: red;font-size: 1.5em;"></i>
+                        </div>
                         <div class="col-3 form-group required">
                             <input class="form-control" id="email" maxlength="50" minlength="1" name="email" type="text" style="width: 100%;" value="E-mail" required>
                         </div>
-                        <div class="col-9 form-group required">
+                        <div class="col-8 form-group required">
                             <input class="form-control" id="emailValue" maxlength="50" minlength="1" name="emailValue" type="text" style="width: 100%;" value="footage@footagestudio.com" required>
                         </div>
                     </div>
-                    <div class="row" style="height: 5em;"></div>
+                    <div class="row baseline" style="height: 5em;"></div>
                     <div class="row">
-                        <div class="col-4"></div>
+                        <div class="col-1"></div>
+                        <div class="col-4 form-group">
+                            <input class="btn btn-default btn-primary" id="newBtn" type="button" value="new" style="width: 100%;" onclick="addContact()">
+                        </div>
+                        <div class="col-2"></div>
                         <div class="col-4 form-group">
                             <input class="btn btn-default btn-success" id="submit" name="submit" type="submit" value="save" style="width: 100%;">
                         </div>
-                        <div class="col-4"></div>
+                        <div class="col-1"></div>
                     </div>
+                    <div class="row" style="height: 5em;"></div>
                 </form>
             </div>
-            <div class="col-1 col-lg-3" style="height: 100%;"></div>
+            <div class="col-1 col-lg-3"></div>
         </div>
-        <div class="vertical-middle" style="height: 26%;"></div>
     </div>
 {% endblock content %}
 {% block footer %}
+    <script>
+        var contactIdx = 0;
+
+        function addContact() {
+            $('\
+                <div id="contact' + contactIdx + '" class="row">\
+                    <div class="col-1 vertical-middle">\
+                        <i class="fa fa-times clickable" onclick="delContact(' + contactIdx + ')" style="color: red;font-size: 1.5em;"></i>\
+                    </div>\
+                    <div class="col-3 form-group required">\
+                        <input class="form-control" id="title' + contactIdx + '" maxlength="50" minlength="1" name="title' + contactIdx + '" type="text" style="width: 100%;" required>\
+                    </div>\
+                    <div class="col-8 form-group required">\
+                        <input class="form-control" id="content' + contactIdx + '" maxlength="50" minlength="1" name="content' + contactIdx + '" type="text" style="width: 100%;" required>\
+                    </div>\
+                </div>').insertBefore('.baseline');
+            contactIdx++;
+        }
+
+        function delContact(idx) {
+            $('#contact' + idx).remove();
+        }
+    </script>
 {% endblock footer %}

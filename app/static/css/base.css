@@ -20,7 +20,10 @@
 body {
     background-image: url('/static/images/background.png');
     background-color: #165a72;
-    height: 100vh;
+}
+
+.clickable {
+    cursor: pointer;
 }
 
 .vertical-middle {
