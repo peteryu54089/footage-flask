@@ -19,18 +19,18 @@
 {% endblock head %}
 {% block title %} - Login{% endblock title %}
 {% block content %}
-<div class="flex-column" style="height: 100%;">
-    <div class="vertical-middle" style="height: 6%;"></div>
-    <div class="vertical-middle" style="height: 21%;">
-        <h1 style="color: #D8BF69;filter: drop-shadow(0.05em 0.05em 0.05em black);font-family: 'bogart-regular-trial';">Footage</h1>
-    </div>
-    <div class="vertical-middle" style="height: 45.5%;">
-        <div class="vertical-middle" style="height: 100%;width: 22.5em;background-color: white;border-radius: 1.5em;">
-            {{ wtf.quick_form(form) }}
+    <div class="flex-column" style="height: 100%;">
+        <div class="vertical-middle" style="height: 6%;"></div>
+        <div class="vertical-middle" style="height: 21%;">
+            <h1 style="color: #D8BF69;filter: drop-shadow(0.05em 0.05em 0.05em black);font-family: 'bogart-regular-trial';">Footage</h1>
         </div>
+        <div class="vertical-middle" style="height: 45.5%;">
+            <div class="vertical-middle" style="height: 100%;width: 22.5em;background-color: white;border-radius: 1.5em;">
+                {{ wtf.quick_form(form) }}
+            </div>
+        </div>
+        <div class="vertical-middle" style="height: 27.5%;"></div>
     </div>
-    <div class="vertical-middle" style="height: 27.5%;"></div>
-</div>
 {% endblock content %}
 {% block footer %}
     <script>
