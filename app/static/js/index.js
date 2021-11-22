@@ -8,7 +8,15 @@ $(function() {
         updateBars();
     });
 
+    $('.navbar, #navbarNav').on('scroll touchmove mousewheel', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+    })
+
     $('#fullpage').fullpage({
+        scrollingSpeed: 300,
+        autoScrolling: false,
         verticalCentered: false,
         onLeave: function(origin, destination, direction) {
             currentPage = destination;
@@ -67,9 +75,11 @@ function toggleNavbar() {
 }
 
 function openNavbar() {
-    $('#navbarText').text(navbarTexts[0]);
-    $('#navbarToggler').removeClass('fa-grip-lines').addClass('fa-times');
-    $('#navbarNav').show();
+    if (currentPage > 1) {
+        $('#navbarText').text(navbarTexts[0]);
+        $('#navbarToggler').removeClass('fa-grip-lines').addClass('fa-times');
+        $('#navbarNav').fadeIn();
+    }
 }
 
 function closeNavbar() {
