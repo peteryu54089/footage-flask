@@ -5,6 +5,10 @@ h4 {
 
 /******************** section ********************/
 
+.section {
+    background-image: url('/static/images/background.png');
+}
+
 .sec-1 {
     background-image: url('/static/images/home.png');
     background-repeat: no-repeat;
@@ -75,20 +79,15 @@ h4 {
 
 #navbarNav {
     background-image: url('/static/images/background.png');
+    height: calc(100% - var(--navbar-height));
     text-align: center;
     position: fixed;
     display: none;
-    height: 100%;
     width: 100vw;
     z-index: 1;
 }
 
 .navbar-after {
-    display: none;
-}
-
-.navbar-blank {
-    height: var(--navbar-height);
     display: none;
 }
 
@@ -113,13 +112,5 @@ h4 {
 
     #sidebar {
         display: none;
-    }
-
-    .navbar {
-        display: block;
-    }
-
-    .navbar-blank {
-        display: block;
     }
 }

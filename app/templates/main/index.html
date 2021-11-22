@@ -4,8 +4,15 @@
     <link rel="stylesheet" href="/static/css/index.css">
 {% endblock head %}
 {% block content %}
+    <nav class="navbar sticky-top">
+        <div class="container-fluid">
+            <img class="navbar-brand clickable drop-shadow" src="/static/images/logo-mobile.png" onclick="$.fn.fullpage.moveTo(1);closeNavbar();" style="max-width: 6em;">
+            <h4 class="ms-auto" id="navbarText" style="margin: 0 0.6em 0 0;">About</h4>
+            <i class="fa fa-grip-lines clickable" id="navbarToggler" onclick="toggleNavbar();" style="color: #E9DCB9;font-size: 2em;"></i>
+        </div>
+    </nav>
     <div class="flex-column" id="navbarNav">
-        <div class="vertical-middle" style="height: 10%;"></div>
+        <div class="vertical-middle" style="height: 9%;"></div>
         <div class="vertical-middle" style="height: 23%;">
             <img class="clickable" src="/static/images/logo.png" onclick="$.fn.fullpage.moveTo(1);closeNavbar();" style="max-width: 14em;">
         </div>
@@ -77,25 +84,16 @@
             </div>
             <div class="col-3"></div>
         </div>
-        <div class="vertical-middle" style="height: 6%;"></div>
+        <div class="vertical-middle" style="height: 7%;"></div>
     </div>
     <div id="fullpage">
         <div class="section">
             <div class="sec-1"></div>
         </div>
-        <nav class="navbar sticky-top">
-            <div class="container-fluid">
-                <img class="navbar-brand clickable drop-shadow" src="/static/images/logo-mobile.png" onclick="$.fn.fullpage.moveTo(1);closeNavbar();" style="max-width: 6em;">
-                <h4 class="ms-auto" id="navbarText" style="margin: 0 0.6em 0 0;">About</h4>
-                <i class="fa fa-grip-lines clickable" id="navbarToggler" onclick="toggleNavbar();" style="color: #E9DCB9;font-size: 2em;"></i>
-            </div>
-        </nav>
-        <div class="section" style="background-image: url('/static/images/background.png');">
-            <div class="navbar-blank"></div>
+        <div class="section">
             <div class="sec-2"></div>
         </div>
-        <div class="section" style="background-color: black;">
-            <div class="navbar-blank"></div>
+        <div class="section">
             <div class="sec-3 flex-column">
                 <div class="row" style="height: 100%;margin: 0;">
                     <div class="col-12 col-lg-6 projects-1"></div>
@@ -103,12 +101,10 @@
                 </div>
             </div>
         </div>
-        <div class="section" style="background-image: url('/static/images/background.png');">
-            <div class="navbar-blank"></div>
+        <div class="section">
             <div class="sec-4"></div>
         </div>
-        <div class="section" style="background-image: url('/static/images/background.png');">
-            <div class="navbar-blank"></div>
+        <div class="section">
             <div class="sec-5"></div>
         </div>
     </div>

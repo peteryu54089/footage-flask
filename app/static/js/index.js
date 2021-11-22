@@ -15,8 +15,6 @@ $(function() {
     })
 
     $('#fullpage').fullpage({
-        scrollingSpeed: 300,
-        autoScrolling: false,
         verticalCentered: false,
         onLeave: function(origin, destination, direction) {
             currentPage = destination;
@@ -98,7 +96,11 @@ function updateBars() {
         }
     } else {
         $('#sidebar').hide();
-        $('.navbar').show();
+        if (currentPage > 1) {
+            $('.navbar').show('slow');
+        } else {
+            $('.navbar').hide();
+        }
         if ($('#navbarText').text() !== navbarTexts[0]) {
             $('#navbarText').text(navbarTexts[currentPage]);
         }
