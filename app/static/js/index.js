@@ -1,5 +1,5 @@
 var currentPage = 1;
-var navbarTexts = ['Menu', 'Home', 'About', 'Projects', 'Q&A', 'Contact'];
+var navbarTexts = ['Menu', 'About', 'About', 'Projects', 'Q&A', 'Contact'];
 var isLargeScreen = window.matchMedia('(min-width: 992px)').matches;
 
 $(function() {
@@ -75,11 +75,10 @@ function toggleNavbar() {
 }
 
 function openNavbar() {
-    if (currentPage > 1) {
-        $('#navbarText').text(navbarTexts[0]);
-        $('#navbarToggler').removeClass('fa-grip-lines').addClass('fa-times');
-        $('#navbarNav').fadeIn();
-    }
+    $.fn.fullpage.moveTo(currentPage === 1 ? 2 : currentPage);
+    $('#navbarText').text(navbarTexts[0]);
+    $('#navbarToggler').removeClass('fa-grip-lines').addClass('fa-times');
+    $('#navbarNav').fadeIn();
 }
 
 function closeNavbar() {
