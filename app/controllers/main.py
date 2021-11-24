@@ -6,7 +6,7 @@ from app.models.main import User, Contact
 
 @app.route('/')
 def index():
-    return render_template('main/index.html')
+    return render_template('main/index.html', contacts = Contact.query.all())
 
 @app.route('/admin')
 def admin():
