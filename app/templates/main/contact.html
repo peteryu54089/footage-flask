@@ -7,13 +7,6 @@
             font-family: 'bogart-regular-trial';
         }
 
-        h5 {
-            filter: drop-shadow(0.05em 0.05em 0.05em black);
-            font-family: 'bogart-regular-trial';
-            color: #E9DCB9;
-            margin: 0;
-        }
-
         .form-group {
             padding: 1%;
         }
@@ -47,25 +40,16 @@
             <div class="col-1 col-lg-3"></div>
             <div class="col-10 col-lg-6">
                 <form action="{{ url_for('contact') }}" method="post" class="form flex-column" role="form">
-                    <div class="row" style="text-align: center;">
-                        <div class="col-1"></div>
-                        <div class="col-3">
-                            <h5>title</h5>
-                        </div>
-                        <div class="col-8">
-                            <h5>content</h5>
-                        </div>
-                    </div>
                     {% for contact in contacts %}
                         <div class="row">
                             <div class="col-1 vertical-middle">
                                 <i class="fa fa-times clickable" onclick="$(this).parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
                             </div>
                             <div class="col-3 form-group required">
-                                <input class="form-control" id="title{{ contact.id }}" maxlength="50" minlength="1" name="title{{ contact.id }}" type="text" style="width: 100%;" value="{{ contact.title }}" required>
+                                <input class="form-control" id="title{{ contact.id }}" maxlength="50" minlength="1" name="title{{ contact.id }}" type="text" style="width: 100%;" placeholder="title" value="{{ contact.title }}" required>
                             </div>
                             <div class="col-8 form-group required">
-                                <input class="form-control" id="content{{ contact.id }}" maxlength="50" minlength="1" name="contact{{ contact.id }}" type="text" style="width: 100%;" value="{{ contact.content }}" required>
+                                <input class="form-control" id="content{{ contact.id }}" maxlength="50" minlength="1" name="content{{ contact.id }}" type="text" style="width: 100%;" placeholder="content" value="{{ contact.content }}" required>
                             </div>
                         </div>
                     {% endfor %}
@@ -73,7 +57,7 @@
                     <div class="row">
                         <div class="col-3"></div>
                         <div class="col-3 form-group">
-                            <input class="btn btn-default btn-primary" id="newBtn" type="button" value="new" style="width: 100%;" onclick="addContact();">
+                            <input class="btn btn-default btn-primary" type="button" value="new" style="width: 100%;" onclick="addContact();">
                         </div>
                         <div class="col-3 form-group">
                             <input class="btn btn-default btn-success" id="submit" name="submit" type="submit" value="save" style="width: 100%;">
@@ -114,10 +98,10 @@
                         <i class="fa fa-times clickable" onclick="$(this).parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>\
                     </div>\
                     <div class="col-3 form-group required">\
-                        <input class="form-control" id="newTitle' + contactIdx + '" maxlength="50" minlength="1" name="newTitle' + contactIdx + '" type="text" style="width: 100%;" required>\
+                        <input class="form-control" id="newTitle' + contactIdx + '" maxlength="50" minlength="1" name="newTitle' + contactIdx + '" type="text" style="width: 100%;" placeholder="title" required>\
                     </div>\
                     <div class="col-8 form-group required">\
-                        <input class="form-control" id="newContent' + contactIdx + '" maxlength="50" minlength="1" name="newContent' + contactIdx + '" type="text" style="width: 100%;" required>\
+                        <input class="form-control" id="newContent' + contactIdx + '" maxlength="50" minlength="1" name="newContent' + contactIdx + '" type="text" style="width: 100%;" placeholder="content" required>\
                     </div>\
                 </div>').insertBefore('#contactBaseline');
             contactIdx++;

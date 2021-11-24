@@ -6,27 +6,193 @@
             filter: drop-shadow(0.05em 0.05em 0.05em black);
             font-family: 'bogart-regular-trial';
         }
+
+        .form-group {
+            padding: 1%;
+        }
     </style>
 {% endblock head %}
 {% block title %} - Q&A{% endblock title %}
 {% block content %}
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #165a72;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="admin" style="color: #D8BF69;">Footage</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" href="about" style="color: #E9DCB9;">About</a>
-                <a class="nav-link" href="projects" style="color: #E9DCB9;">Projects</a>
-                <a class="nav-link" href="qna" style="color: #E9DCB9;">Q&A</a>
-                <a class="nav-link" href="contact" style="color: #E9DCB9;">Contact</a>
-                <a class="nav-link" href="{{ url_for('logout') }}" style="color: #E9DCB9;">Log out</a>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #165a72;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="admin" style="color: #D8BF69;">Footage</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="about" style="color: #E9DCB9;">About</a>
+                    <a class="nav-link" href="projects" style="color: #E9DCB9;">Projects</a>
+                    <a class="nav-link" href="qna" style="color: #E9DCB9;">Q&A</a>
+                    <a class="nav-link" href="contact" style="color: #E9DCB9;">Contact</a>
+                    <a class="nav-link" href="{{ url_for('logout') }}" style="color: #E9DCB9;">Log out</a>
+                </div>
             </div>
         </div>
+    </nav>
+    <div class="flex-column" style="top: var(--navbar-height);">
+        <div class="vertical-middle" style="height: 1.3em;"></div>
+        <div class="vertical-middle" style="height: 10.8em;">
+            <h1 style="color: #D8BF69;filter: drop-shadow(0.05em 0.05em 0.05em black);font-family: 'bogart-regular-trial';">Q&A</h1>
+        </div>
+        <div class="vertical-middle">
+            <div class="col-1 col-lg-3"></div>
+            <div class="col-10 col-lg-6">
+                <form action="{{ url_for('qna') }}" method="post" class="form flex-column" role="form">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-11">
+                            <h3 style="color: #E9DCB9;">金額</h3>
+                        </div>
+                    </div>
+                    <hr style="height: 0.12em;color: #E9DCB9;opacity: 1;">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-1 vertical-middle">
+                                <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
+                            </div>
+                            <div class="col-11 form-group required">
+                                <input class="form-control" id="title1" maxlength="50" minlength="1" name="title1" type="text" style="width: 100%;" placeholder="title" value="費用如何支付?" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1 vertical-middle"></div>
+                            <div class="col-11 form-group required">
+                                <textarea class="form-control" id="content1" maxlength="10000" minlength="1" name="content1" rows="4" cols="50" style="width: 100%;" placeholder="content" required>有現金、line pay、轉帳等方式，若在現場有追加金額則請以現金支付。&#13;&#10;本店沒有發票，若有需要收據請提前告知謝謝。</textarea>
+                            </div>
+                        </div>
+                        <input class="form-control" id="category1" name="category1" type="hidden" value="1">
+                    </div>
+                    <div class="row" id="qnaBaseline1" style="height: 1em;"></div>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4 form-group">
+                            <input class="btn btn-default btn-primary" type="button" value="new" style="width: 100%;" onclick="addQna(1);">
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                    <div class="row" style="height: 5em;"></div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-11">
+                            <h3 style="color: #E9DCB9;">預約</h3>
+                        </div>
+                    </div>
+                    <hr style="height: 0.12em;color: #E9DCB9;opacity: 1;">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-1 vertical-middle">
+                                <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
+                            </div>
+                            <div class="col-11 form-group required">
+                                <input class="form-control" id="title2" maxlength="50" minlength="1" name="title2" type="text" style="width: 100%;" placeholder="title" value="費用如何支付?" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1 vertical-middle"></div>
+                            <div class="col-11 form-group required">
+                                <textarea class="form-control" id="content2" maxlength="10000" minlength="1" name="content2" rows="4" cols="50" style="width: 100%;" placeholder="content" required>有現金、line pay、轉帳等方式，若在現場有追加金額則請以現金支付。&#13;&#10;本店沒有發票，若有需要收據請提前告知謝謝。</textarea>
+                            </div>
+                        </div>
+                        <input class="form-control" id="category2" name="category2" type="hidden" value="2">
+                    </div>
+                    <div class="row" id="qnaBaseline2" style="height: 1em;"></div>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4 form-group">
+                            <input class="btn btn-default btn-primary" type="button" value="new" style="width: 100%;" onclick="addQna(2);">
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                    <div class="row" style="height: 5em;"></div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-11">
+                            <h3 style="color: #E9DCB9;">拍攝</h3>
+                        </div>
+                    </div>
+                    <hr style="height: 0.12em;color: #E9DCB9;opacity: 1;">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-1 vertical-middle">
+                                <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
+                            </div>
+                            <div class="col-11 form-group required">
+                                <input class="form-control" id="title3" maxlength="50" minlength="1" name="title3" type="text" style="width: 100%;" placeholder="title" value="費用如何支付?" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1 vertical-middle"></div>
+                            <div class="col-11 form-group required">
+                                <textarea class="form-control" id="content3" maxlength="10000" minlength="1" name="content3" rows="4" cols="50" style="width: 100%;" placeholder="content" required>有現金、line pay、轉帳等方式，若在現場有追加金額則請以現金支付。&#13;&#10;本店沒有發票，若有需要收據請提前告知謝謝。</textarea>
+                            </div>
+                        </div>
+                        <input class="form-control" id="category3" name="category3" type="hidden" value="3">
+                    </div>
+                    <div class="row" id="qnaBaseline3" style="height: 1em;"></div>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4 form-group">
+                            <input class="btn btn-default btn-primary" type="button" value="new" style="width: 100%;" onclick="addQna(3);">
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                    <div class="row" style="height: 1em;"></div>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4 form-group">
+                            <input class="btn btn-default btn-success" id="submit" name="submit" type="submit" value="save" style="width: 100%;">
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                    <div class="row" style="height: 5em;"></div>
+                    <div class="row" style="height: 3.6em;">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    <div class="alert alert-success" role="alert" style="margin: 0;text-align: center;">
+                                        {% for message in messages %}
+                                            <span>{{ message }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                    <div class="row" style="height: 5em;"></div>
+                </form>
+            </div>
+            <div class="col-1 col-lg-3"></div>
+        </div>
     </div>
-</nav>
 {% endblock content %}
 {% block footer %}
+    <script>
+        var qnaIdx = 0;
+
+        function addQna(category) {
+            $('\
+                <div class="row">\
+                    <div class="row">\
+                        <div class="col-1 vertical-middle">\
+                            <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>\
+                        </div>\
+                        <div class="col-11 form-group required">\
+                            <input class="form-control" id="newTitle' + qnaIdx + '" maxlength="50" minlength="1" name="newTitle' + qnaIdx + '" type="text" style="width: 100%;" placeholder="title" required>\
+                        </div>\
+                    </div>\
+                    <div class="row">\
+                        <div class="col-1 vertical-middle"></div>\
+                        <div class="col-11 form-group required">\
+                            <textarea class="form-control" id="newContent' + qnaIdx + '" maxlength="10000" minlength="1" name="newContent' + qnaIdx + '" rows="4" cols="50" style="width: 100%;" placeholder="content" required></textarea>\
+                        </div>\
+                    </div>\
+                    <input class="form-control" id="newCategory' + qnaIdx + '" name="newCategory' + qnaIdx + '" type="hidden" value="' + category + '">\
+                </div>').insertBefore('#qnaBaseline' + category);
+            qnaIdx++;
+        }
+    </script>
 {% endblock footer %}
