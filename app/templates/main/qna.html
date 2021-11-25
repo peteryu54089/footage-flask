@@ -47,23 +47,25 @@
                         </div>
                     </div>
                     <hr style="height: 0.12em;color: #E9DCB9;opacity: 1;">
-                    <div class="row">
+                    {% for qna in qnas1 %}
                         <div class="row">
-                            <div class="col-1 vertical-middle">
-                                <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
+                            <div class="row">
+                                <div class="col-1 vertical-middle">
+                                    <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
+                                </div>
+                                <div class="col-11 form-group required">
+                                    <input class="form-control" id="title{{ qna.id }}" maxlength="100" minlength="1" name="title{{ qna.id }}" type="text" style="width: 100%;" placeholder="title" value="{{ qna.title }}" required>
+                                </div>
                             </div>
-                            <div class="col-11 form-group required">
-                                <input class="form-control" id="title1" maxlength="50" minlength="1" name="title1" type="text" style="width: 100%;" placeholder="title" value="費用如何支付?" required>
+                            <div class="row">
+                                <div class="col-1 vertical-middle"></div>
+                                <div class="col-11 form-group required">
+                                    <textarea class="form-control" id="content{{ qna.id }}" maxlength="10000" minlength="1" name="content{{ qna.id }}" rows="4" cols="50" style="width: 100%;" placeholder="content" required>{{ qna.content }}</textarea>
+                                </div>
                             </div>
+                            <input class="form-control" id="category{{ qna.id }}" name="category{{ qna.id }}" type="hidden" value="{{ qna.category }}">
                         </div>
-                        <div class="row">
-                            <div class="col-1 vertical-middle"></div>
-                            <div class="col-11 form-group required">
-                                <textarea class="form-control" id="content1" maxlength="10000" minlength="1" name="content1" rows="4" cols="50" style="width: 100%;" placeholder="content" required>有現金、line pay、轉帳等方式，若在現場有追加金額則請以現金支付。&#13;&#10;本店沒有發票，若有需要收據請提前告知謝謝。</textarea>
-                            </div>
-                        </div>
-                        <input class="form-control" id="category1" name="category1" type="hidden" value="1">
-                    </div>
+                    {% endfor %}
                     <div class="row" id="qnaBaseline1" style="height: 1em;"></div>
                     <div class="row">
                         <div class="col-4"></div>
@@ -80,23 +82,25 @@
                         </div>
                     </div>
                     <hr style="height: 0.12em;color: #E9DCB9;opacity: 1;">
-                    <div class="row">
+                    {% for qna in qnas2 %}
                         <div class="row">
-                            <div class="col-1 vertical-middle">
-                                <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
+                            <div class="row">
+                                <div class="col-1 vertical-middle">
+                                    <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
+                                </div>
+                                <div class="col-11 form-group required">
+                                    <input class="form-control" id="title{{ qna.id }}" maxlength="100" minlength="1" name="title{{ qna.id }}" type="text" style="width: 100%;" placeholder="title" value="{{ qna.title }}" required>
+                                </div>
                             </div>
-                            <div class="col-11 form-group required">
-                                <input class="form-control" id="title2" maxlength="50" minlength="1" name="title2" type="text" style="width: 100%;" placeholder="title" value="費用如何支付?" required>
+                            <div class="row">
+                                <div class="col-1 vertical-middle"></div>
+                                <div class="col-11 form-group required">
+                                    <textarea class="form-control" id="content{{ qna.id }}" maxlength="10000" minlength="1" name="content{{ qna.id }}" rows="4" cols="50" style="width: 100%;" placeholder="content" required>{{ qna.content }}</textarea>
+                                </div>
                             </div>
+                            <input class="form-control" id="category{{ qna.id }}" name="category{{ qna.id }}" type="hidden" value="{{ qna.category }}">
                         </div>
-                        <div class="row">
-                            <div class="col-1 vertical-middle"></div>
-                            <div class="col-11 form-group required">
-                                <textarea class="form-control" id="content2" maxlength="10000" minlength="1" name="content2" rows="4" cols="50" style="width: 100%;" placeholder="content" required>有現金、line pay、轉帳等方式，若在現場有追加金額則請以現金支付。&#13;&#10;本店沒有發票，若有需要收據請提前告知謝謝。</textarea>
-                            </div>
-                        </div>
-                        <input class="form-control" id="category2" name="category2" type="hidden" value="2">
-                    </div>
+                    {% endfor %}
                     <div class="row" id="qnaBaseline2" style="height: 1em;"></div>
                     <div class="row">
                         <div class="col-4"></div>
@@ -113,23 +117,25 @@
                         </div>
                     </div>
                     <hr style="height: 0.12em;color: #E9DCB9;opacity: 1;">
-                    <div class="row">
+                    {% for qna in qnas3 %}
                         <div class="row">
-                            <div class="col-1 vertical-middle">
-                                <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
+                            <div class="row">
+                                <div class="col-1 vertical-middle">
+                                    <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
+                                </div>
+                                <div class="col-11 form-group required">
+                                    <input class="form-control" id="title{{ qna.id }}" maxlength="100" minlength="1" name="title{{ qna.id }}" type="text" style="width: 100%;" placeholder="title" value="{{ qna.title }}" required>
+                                </div>
                             </div>
-                            <div class="col-11 form-group required">
-                                <input class="form-control" id="title3" maxlength="50" minlength="1" name="title3" type="text" style="width: 100%;" placeholder="title" value="費用如何支付?" required>
+                            <div class="row">
+                                <div class="col-1 vertical-middle"></div>
+                                <div class="col-11 form-group required">
+                                    <textarea class="form-control" id="content{{ qna.id }}" maxlength="10000" minlength="1" name="content{{ qna.id }}" rows="4" cols="50" style="width: 100%;" placeholder="content" required>{{ qna.content }}</textarea>
+                                </div>
                             </div>
+                            <input class="form-control" id="category{{ qna.id }}" name="category{{ qna.id }}" type="hidden" value="{{ qna.category }}">
                         </div>
-                        <div class="row">
-                            <div class="col-1 vertical-middle"></div>
-                            <div class="col-11 form-group required">
-                                <textarea class="form-control" id="content3" maxlength="10000" minlength="1" name="content3" rows="4" cols="50" style="width: 100%;" placeholder="content" required>有現金、line pay、轉帳等方式，若在現場有追加金額則請以現金支付。&#13;&#10;本店沒有發票，若有需要收據請提前告知謝謝。</textarea>
-                            </div>
-                        </div>
-                        <input class="form-control" id="category3" name="category3" type="hidden" value="3">
-                    </div>
+                    {% endfor %}
                     <div class="row" id="qnaBaseline3" style="height: 1em;"></div>
                     <div class="row">
                         <div class="col-4"></div>
@@ -181,7 +187,7 @@
                             <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>\
                         </div>\
                         <div class="col-11 form-group required">\
-                            <input class="form-control" id="newTitle' + qnaIdx + '" maxlength="50" minlength="1" name="newTitle' + qnaIdx + '" type="text" style="width: 100%;" placeholder="title" required>\
+                            <input class="form-control" id="newTitle' + qnaIdx + '" maxlength="100" minlength="1" name="newTitle' + qnaIdx + '" type="text" style="width: 100%;" placeholder="title" required>\
                         </div>\
                     </div>\
                     <div class="row">\
