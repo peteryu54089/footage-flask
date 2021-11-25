@@ -15,22 +15,27 @@ h4 {
     background-position: center;
     background-size: cover;
     height: 100%;
+    margin: 0;
 }
 
 .sec-2 {
     height: 100%;
+    margin: 0;
 }
 
 .sec-3 {
     height: 100%;
+    margin: 0;
 }
 
 .sec-4 {
     height: 100%;
+    margin: 0;
 }
 
 .sec-5 {
     height: 100%;
+    margin: 0;
 }
 
 .projects-1 {
@@ -89,6 +94,56 @@ h4 {
 
 .navbar-after {
     display: none;
+}
+
+/******************** accordion ********************/
+
+.accordion-item {
+    border-width: 0.12em 0 0.12em 0;
+    background-color: transparent;
+    border-color: #E9DCB9;
+    border-style: solid;
+    color: #E9DCB9;
+}
+
+.accordion-item:first-of-type {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.accordion-item:last-of-type {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.accordion-button {
+    background-color: transparent;
+    color: #D8BF69;
+    padding: 1em;
+}
+
+.accordion-button:not(.collapsed) {
+    box-shadow: 0 0 0 0 transparent;
+    background-color: transparent;
+    color: #D8BF69;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23E9DCB9'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23E9DCB9'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0 transparent;
+}
+
+.accordion-body {
+    padding: 0.4em 0.8em 1.3em 0.8em;
+    letter-spacing: 0.05em;
+    line-height: 2.4em;
 }
 
 /******************** other ********************/

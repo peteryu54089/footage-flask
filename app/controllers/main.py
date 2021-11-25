@@ -6,8 +6,11 @@ from app.models.main import User, Qna, Contact
 
 @app.route('/')
 def index():
+    qnas1 = Qna.query.filter_by(category = '1').all()
+    qnas2 = Qna.query.filter_by(category = '2').all()
+    qnas3 = Qna.query.filter_by(category = '3').all()
     contacts = Contact.query.all()
-    return render_template('main/index.html', contacts = contacts)
+    return render_template('main/index.html', qnas1 = qnas1, qnas2 = qnas2, qnas3 = qnas3, contacts = contacts)
 
 @app.route('/admin')
 def admin():

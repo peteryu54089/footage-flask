@@ -94,35 +94,101 @@
             <div class="sec-2"></div>
         </div>
         <div class="section">
-            <div class="sec-3 flex-column">
-                <div class="row" style="height: 100%;margin: 0;">
-                    <div class="col-12 col-lg-6 projects-1"></div>
-                    <div class="col-12 col-lg-6 projects-2"></div>
+            <div class="sec-3 row">
+                <div class="col-12 col-lg-6 projects-1"></div>
+                <div class="col-12 col-lg-6 projects-2"></div>
+            </div>
+        </div>
+        <div class="section fp-auto-height">
+            <div class="sec-4 row">
+                <div class="col-1"></div>
+                <div class="col-10 vertical-middle">
+                    <div style="width: 36em;">
+                        <div class="vertical-middle" style="height: 2em;"></div>
+                        <div class="vertical-middle" style="height: 11em;">
+                            <img class="drop-shadow" src="/static/images/qna-after.png" style="max-width: 6em;">
+                        </div>
+                        <h2 style="color: #E9DCB9;margin: 0.2em 0.45em 0.35em 0.45em;">金額</h2>
+                        <div class="accordion" id="qnaAccordion1">
+                            {% for qna in qnas1 %}
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="qnaHeading{{ qna.id }}">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#qnaCollapse{{ qna.id }}" aria-expanded="false" aria-controls="qnaCollapse{{ qna.id }}">
+                                            <i class="fa fa-sort" style="color: #D8BF69;font-size: 1.1em;"></i>
+                                            <span style="color: #D8BF69;font-size: 1.1em;margin-left: 0.5em;">{{ qna.title }}</span>
+                                        </button>
+                                    </h2>
+                                    <div id="qnaCollapse{{ qna.id }}" class="accordion-collapse collapse" aria-labelledby="qnaHeading{{ qna.id }}" data-bs-parent="#qnaAccordion1">
+                                        <div class="accordion-body">
+                                            {{ qna.content }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div style="height: 2em;"></div>
+                        <h2 style="color: #E9DCB9;margin: 0.2em 0.45em 0.35em 0.45em;">預約</h2>
+                        <div class="accordion" id="qnaAccordion2">
+                            {% for qna in qnas2 %}
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="qnaHeading{{ qna.id }}">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#qnaCollapse{{ qna.id }}" aria-expanded="false" aria-controls="qnaCollapse{{ qna.id }}">
+                                            <i class="fa fa-sort" style="color: #D8BF69;font-size: 1.1em;"></i>
+                                            <span style="color: #D8BF69;font-size: 1.1em;margin-left: 0.5em;">{{ qna.title }}</span>
+                                        </button>
+                                    </h2>
+                                    <div id="qnaCollapse{{ qna.id }}" class="accordion-collapse collapse" aria-labelledby="qnaHeading{{ qna.id }}" data-bs-parent="#qnaAccordion2">
+                                        <div class="accordion-body">
+                                            {{ qna.content }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div style="height: 2em;"></div>
+                        <h2 style="color: #E9DCB9;margin: 0.2em 0.45em 0.35em 0.45em;">拍攝</h2>
+                        <div class="accordion" id="qnaAccordion3">
+                            {% for qna in qnas3 %}
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="qnaHeading{{ qna.id }}">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#qnaCollapse{{ qna.id }}" aria-expanded="false" aria-controls="qnaCollapse{{ qna.id }}">
+                                            <i class="fa fa-sort" style="color: #D8BF69;font-size: 1.1em;"></i>
+                                            <span style="color: #D8BF69;font-size: 1.1em;margin-left: 0.5em;">{{ qna.title }}</span>
+                                        </button>
+                                    </h2>
+                                    <div id="qnaCollapse{{ qna.id }}" class="accordion-collapse collapse" aria-labelledby="qnaHeading{{ qna.id }}" data-bs-parent="#qnaAccordion3">
+                                        <div class="accordion-body">
+                                            {{ qna.content }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="vertical-middle" style="height: 6em;"></div>
+                    </div>
                 </div>
+                <div class="col-1"></div>
             </div>
         </div>
         <div class="section">
-            <div class="sec-4"></div>
-        </div>
-        <div class="section">
-            <div class="sec-5 flex-column">
-                <div class="row" style="height: 100%;margin: 0;">
-                    <div class="col-1 col-sm-2 col-md-3 col-xl-4" style="height: 100%;"></div>
-                    <div class="col-10 col-sm-8 col-md-6 col-xl-4" style="height: 100%;">
+            <div class="sec-5 row">
+                <div class="col-1" style="height: 100%;"></div>
+                <div class="col-10 vertical-middle" style="height: 100%;">
+                    <div style="height: 100%;width: 22.5em;">
                         <div class="vertical-middle" style="height: 4.5%;"></div>
                         <div class="vertical-middle" style="height: 22.5%;">
-                            <img class="drop-shadow" src="/static/images/contact-after.png" style="max-width: 10.5em">
+                            <img class="drop-shadow" src="/static/images/contact-after.png" style="max-width: 10.5em;">
                         </div>
                         <div class="vertical-middle" style="height: 45.5%;">
-                            <div class="vertical-middle" style="height: 100%;width: 22.5em;background-color: white;border-radius: 1.5em;">
+                            <div class="vertical-middle" style="height: 100%;width: 100%;background-color: white;border-radius: 1.5em;">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.901371078009!2d121.5531456150966!3d25.037420983970716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abc8c30daaab%3A0x847a6aa3bc152f56!2z5LuB5oSb6ZuZ5pif5aSn5buI!5e0!3m2!1szh-TW!2stw!4v1637741967930!5m2!1szh-TW!2stw" width="100%" height="100%" style="border:0;border-radius: 1.5em;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
                         <div class="vertical-middle" style="height: 6.5%;">
                             <span class="vertical-middle" style="height: 100%;color: #E9DCB9;">臺北市, 臺灣</span>
                         </div>
-                        <div class="vertical-middle" style="height: 3%;"></div>
-                        <div class="flex-column" style="height: 10%;">
+                        <div class="vertical-middle" style="height: 2%;"></div>
+                        <div class="flex-column" style="height: 11%;">
                             {% for contact in contacts %}
                                 <div class="vertical-middle" style="height: 45%;">
                                     <div style="height: 100%;width: 1.2em;"></div>
@@ -137,8 +203,8 @@
                         </div>
                         <div class="vertical-middle" style="height: 8%;"></div>
                     </div>
-                    <div class="col-1 col-sm-2 col-md-3 col-xl-4" style="height: 100%;"></div>
                 </div>
+                <div class="col-1" style="height: 100%;"></div>
             </div>
         </div>
     </div>
