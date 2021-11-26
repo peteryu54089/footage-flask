@@ -97,14 +97,14 @@ function updateBars() {
         closeNavbar();
         $('.navbar').hide();
         if (currentPage > 1) {
-            $('#sidebar').fadeIn();
+            $('#sidebar').show();
         } else {
             $('#sidebar').hide();
         }
     } else {
         $('#sidebar').hide();
         if (currentPage > 1) {
-            $('.navbar').fadeIn();
+            $('.navbar').show();
         } else {
             $('.navbar').hide();
         }
