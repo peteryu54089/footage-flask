@@ -16,7 +16,7 @@ $(function() {
 
     $('#fullpage').fullpage({
         scrollingSpeed: 300,
-	    autoScrolling: false,
+        autoScrolling: false,
         fitToSection: false,
         verticalCentered: false,
         onLeave: function(origin, destination, direction) {
