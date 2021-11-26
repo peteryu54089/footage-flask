@@ -6,7 +6,7 @@
 {% block content %}
     <nav class="navbar sticky-top">
         <div class="container-fluid">
-            <img class="navbar-brand clickable drop-shadow" src="/static/images/logo-mobile.png" onclick="$.fn.fullpage.moveTo(1);closeNavbar();" style="max-width: 6em;">
+            <img class="navbar-brand clickable drop-shadow" src="/static/images/logo-mobile.png" onclick="movePage(1);" style="max-width: 6em;">
             <h4 class="ms-auto" id="navbarText" style="margin: 0 0.6em 0 0;">About</h4>
             <i class="fa fa-grip-lines clickable" id="navbarToggler" onclick="toggleNavbar();" style="color: #E9DCB9;font-size: 2em;"></i>
         </div>
@@ -14,7 +14,7 @@
     <div class="flex-column" id="navbarNav">
         <div class="vertical-middle" style="height: 9%;"></div>
         <div class="vertical-middle" style="height: 23%;">
-            <img class="clickable" src="/static/images/logo.png" onclick="$.fn.fullpage.moveTo(1);closeNavbar();" style="max-width: 14em;">
+            <img class="clickable" src="/static/images/logo.png" onclick="movePage(1);" style="max-width: 14em;">
         </div>
         <div class="vertical-middle" style="height: 11%;">
             <div class="col-2"></div>
@@ -22,8 +22,8 @@
                 <img class="navbar-after navbar-after-2 drop-shadow" src="/static/images/bar-left.png" style="max-width: 3.5em">
             </div>
             <div class="col-4">
-                <img class="navbar-before navbar-before-2 clickable drop-shadow" src="/static/images/about-before.png" onclick="$.fn.fullpage.moveTo(2);closeNavbar();" style="max-width: 6em">
-                <img class="navbar-after navbar-after-2 clickable drop-shadow" src="/static/images/about-after.png" onclick="$.fn.fullpage.moveTo(2);closeNavbar();" style="max-width: 6em">
+                <img class="navbar-before navbar-before-2 clickable drop-shadow" src="/static/images/about-before.png" onclick="movePage(2);" style="max-width: 6em">
+                <img class="navbar-after navbar-after-2 clickable drop-shadow" src="/static/images/about-after.png" onclick="movePage(2);" style="max-width: 6em">
             </div>
             <div class="col-2">
                 <img class="navbar-after navbar-after-2 drop-shadow" src="/static/images/bar-right.png" style="max-width: 3.5em">
@@ -36,8 +36,8 @@
                 <img class="navbar-after navbar-after-3 drop-shadow" src="/static/images/bar-left.png" style="max-width: 3.5em">
             </div>
             <div class="col-4">
-                <img class="navbar-before navbar-before-3 clickable drop-shadow" src="/static/images/projects-before.png" onclick="$.fn.fullpage.moveTo(3);closeNavbar();" style="max-width: 7em">
-                <img class="navbar-after navbar-after-3 clickable drop-shadow" src="/static/images/projects-after.png" onclick="$.fn.fullpage.moveTo(3);closeNavbar();" style="max-width: 7em">
+                <img class="navbar-before navbar-before-3 clickable drop-shadow" src="/static/images/projects-before.png" onclick="movePage(3);" style="max-width: 7em">
+                <img class="navbar-after navbar-after-3 clickable drop-shadow" src="/static/images/projects-after.png" onclick="movePage(3);" style="max-width: 7em">
             </div>
             <div class="col-2">
                 <img class="navbar-after navbar-after-3 drop-shadow" src="/static/images/bar-right.png" style="max-width: 3.5em">
@@ -50,8 +50,8 @@
                 <img class="navbar-after navbar-after-4 drop-shadow" src="/static/images/bar-left.png" style="max-width: 3.5em">
             </div>
             <div class="col-4">
-                <img class="navbar-before navbar-before-4 clickable drop-shadow" src="/static/images/qna-before.png" onclick="$.fn.fullpage.moveTo(4);closeNavbar();" style="max-width: 4.2em">
-                <img class="navbar-after navbar-after-4 clickable drop-shadow" src="/static/images/qna-after.png" onclick="$.fn.fullpage.moveTo(4);closeNavbar();" style="max-width: 4.2em">
+                <img class="navbar-before navbar-before-4 clickable drop-shadow" src="/static/images/qna-before.png" onclick="movePage(4);" style="max-width: 4.2em">
+                <img class="navbar-after navbar-after-4 clickable drop-shadow" src="/static/images/qna-after.png" onclick="movePage(4);" style="max-width: 4.2em">
             </div>
             <div class="col-2">
                 <img class="navbar-after navbar-after-4 drop-shadow" src="/static/images/bar-right.png" style="max-width: 3.5em">
@@ -64,8 +64,8 @@
                 <img class="navbar-after navbar-after-5 drop-shadow" src="/static/images/bar-left.png" style="max-width: 3.5em">
             </div>
             <div class="col-4">
-                <img class="navbar-before navbar-before-5 clickable drop-shadow" src="/static/images/contact-before.png" onclick="$.fn.fullpage.moveTo(5);closeNavbar();" style="max-width: 7em">
-                <img class="navbar-after navbar-after-5 clickable drop-shadow" src="/static/images/contact-after.png" onclick="$.fn.fullpage.moveTo(5);closeNavbar();" style="max-width: 7em">
+                <img class="navbar-before navbar-before-5 clickable drop-shadow" src="/static/images/contact-before.png" onclick="movePage(5);" style="max-width: 7em">
+                <img class="navbar-after navbar-after-5 clickable drop-shadow" src="/static/images/contact-after.png" onclick="movePage(5);" style="max-width: 7em">
             </div>
             <div class="col-2">
                 <img class="navbar-after navbar-after-5 drop-shadow" src="/static/images/bar-right.png" style="max-width: 3.5em">
@@ -211,9 +211,9 @@
     <div class="flex-column" id="sidebar">
         <div class="vertical-middle" style="height: 24%;"></div>
         <div class="vertical-middle" style="height: 17%;">
-            <img class="clickable" src="/static/images/logo.png" onclick="$.fn.fullpage.moveTo(1);" style="max-width: 13em;margin-right: 1.5em;">
+            <img class="clickable" src="/static/images/logo.png" onclick="movePage(1);" style="max-width: 13em;margin-right: 1.5em;">
         </div>
-        <div class="vertical-middle clickable" style="height: 6.5%;" onclick="$.fn.fullpage.moveTo(2);">
+        <div class="vertical-middle clickable" style="height: 6.5%;" onclick="movePage(2);">
             <div class="col-4" style="text-align: right;">
                 <img class="sidebar-before sidebar-before-2 drop-shadow" src="/static/images/about-before.png" style="max-width: 4em">
                 <img class="sidebar-after sidebar-after-2 drop-shadow" src="/static/images/about-after.png" style="max-width: 4em">
@@ -230,7 +230,7 @@
             </div>
             <div class="col-1"></div>
         </div>
-        <div class="vertical-middle clickable" style="height: 6.5%;" onclick="$.fn.fullpage.moveTo(3);">
+        <div class="vertical-middle clickable" style="height: 6.5%;" onclick="movePage(3);">
             <div class="col-4" style="text-align: right;">
                 <img class="sidebar-before sidebar-before-3 drop-shadow" src="/static/images/projects-before.png" style="max-width: 5em">
                 <img class="sidebar-after sidebar-after-3 drop-shadow" src="/static/images/projects-after.png" style="max-width: 5em">
@@ -247,7 +247,7 @@
             </div>
             <div class="col-1"></div>
         </div>
-        <div class="vertical-middle clickable" style="height: 6.5%;" onclick="$.fn.fullpage.moveTo(4);">
+        <div class="vertical-middle clickable" style="height: 6.5%;" onclick="movePage(4);">
             <div class="col-4" style="text-align: right;">
                 <img class="sidebar-before sidebar-before-4 drop-shadow" src="/static/images/qna-before.png" style="max-width: 3em">
                 <img class="sidebar-after sidebar-after-4 drop-shadow" src="/static/images/qna-after.png" style="max-width: 3em">
@@ -264,7 +264,7 @@
             </div>
             <div class="col-1"></div>
         </div>
-        <div class="vertical-middle clickable" style="height: 6.5%;" onclick="$.fn.fullpage.moveTo(5);">
+        <div class="vertical-middle clickable" style="height: 6.5%;" onclick="movePage(5);">
             <div class="col-4" style="text-align: right;">
                 <img class="sidebar-before sidebar-before-5 drop-shadow" src="/static/images/contact-before.png" style="max-width: 5em">
                 <img class="sidebar-after sidebar-after-5 drop-shadow" src="/static/images/contact-after.png" style="max-width: 5em">

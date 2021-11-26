@@ -15,6 +15,9 @@ $(function() {
     })
 
     $('#fullpage').fullpage({
+        scrollingSpeed: 300,
+	    autoScrolling: false,
+        fitToSection: false,
         verticalCentered: false,
         onLeave: function(origin, destination, direction) {
             currentPage = destination;
@@ -73,7 +76,6 @@ function toggleNavbar() {
 }
 
 function openNavbar() {
-    $.fn.fullpage.moveTo(currentPage === 1 ? 2 : currentPage);
     $('#navbarText').text(navbarTexts[0]);
     $('#navbarToggler').removeClass('fa-grip-lines').addClass('fa-times');
     $('#navbarNav').fadeIn();
@@ -85,19 +87,24 @@ function closeNavbar() {
     $('#navbarNav').hide();
 }
 
+function movePage(destination) {
+    $.fn.fullpage.moveTo(destination);
+    closeNavbar();
+}
+
 function updateBars() {
     if (isLargeScreen) {
         closeNavbar();
         $('.navbar').hide();
         if (currentPage > 1) {
-            $('#sidebar').show('slow');
+            $('#sidebar').fadeIn();
         } else {
             $('#sidebar').hide();
         }
     } else {
         $('#sidebar').hide();
         if (currentPage > 1) {
-            $('.navbar').show('slow');
+            $('.navbar').fadeIn();
         } else {
             $('.navbar').hide();
         }
