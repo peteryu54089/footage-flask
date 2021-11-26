@@ -149,22 +149,6 @@ h4 {
 /******************** other ********************/
 
 @media screen and (max-width: 992px) {
-    .sec-2 {
-        height: calc(100% - var(--navbar-height));
-    }
-    
-    .sec-3 {
-        height: calc(100% - var(--navbar-height));
-    }
-    
-    .sec-4 {
-        height: calc(100% - var(--navbar-height));
-    }
-    
-    .sec-5 {
-        height: calc(100% - var(--navbar-height));
-    }
-
     #sidebar {
         display: none;
     }

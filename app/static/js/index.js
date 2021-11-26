@@ -1,5 +1,5 @@
 var currentPage = 1;
-var navbarTexts = ['Menu', 'About', 'About', 'Projects', 'Q&A', 'Contact'];
+var navbarTexts = ['Menu', 'Home', 'About', 'Projects', 'Q&A', 'Contact'];
 var isLargeScreen = window.matchMedia('(min-width: 992px)').matches;
 
 $(function() {
