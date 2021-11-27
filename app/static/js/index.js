@@ -78,7 +78,7 @@ function toggleNavbar() {
 function openNavbar() {
     $('#navbarText').text(navbarTexts[0]);
     $('#navbarToggler').removeClass('fa-grip-lines').addClass('fa-times');
-    $('#navbarNav').fadeIn();
+    $('#navbarNav').show();
 }
 
 function closeNavbar() {

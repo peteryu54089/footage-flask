@@ -20,16 +20,16 @@
 {% block title %} - Login{% endblock title %}
 {% block content %}
     <div class="flex-column" style="height: 100vh;">
-        <div class="vertical-middle" style="height: 6%;"></div>
-        <div class="vertical-middle" style="height: 21%;">
+        <div style="height: 6%;"></div>
+        <div class="vertical-center" style="height: 21%;">
             <h1 style="color: #D8BF69;filter: drop-shadow(0.05em 0.05em 0.05em black);font-family: 'bogart-regular-trial';">Footage</h1>
         </div>
-        <div class="vertical-middle" style="height: 45.5%;">
-            <div class="vertical-middle" style="height: 100%;width: 22.5em;background-color: white;border-radius: 1.5em;">
+        <div class="vertical-center" style="height: 45.5%;">
+            <div class="vertical-center" style="height: 100%;width: 22.5em;background-color: white;border-radius: 1.5em;">
                 {{ wtf.quick_form(form) }}
             </div>
         </div>
-        <div class="vertical-middle" style="height: 27.5%;">
+        <div class="vertical-center" style="height: 27.5%;">
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     <div class="alert alert-danger" role="alert">

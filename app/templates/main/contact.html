@@ -32,17 +32,17 @@
         </div>
     </nav>
     <div class="flex-column" style="top: var(--navbar-height);">
-        <div class="vertical-middle" style="height: 1.3em;"></div>
-        <div class="vertical-middle" style="height: 10.8em;">
+        <div style="height: 1.3em;"></div>
+        <div class="vertical-center" style="height: 10.8em;">
             <h1 style="color: #D8BF69;filter: drop-shadow(0.05em 0.05em 0.05em black);font-family: 'bogart-regular-trial';">Contact</h1>
         </div>
-        <div class="vertical-middle">
+        <div class="vertical-center">
             <div class="col-1 col-lg-3"></div>
             <div class="col-10 col-lg-6">
                 <form action="{{ url_for('contact') }}" method="post" class="form flex-column" role="form">
                     {% for contact in contacts %}
                         <div class="row">
-                            <div class="col-1 vertical-middle">
+                            <div class="col-1 vertical-center">
                                 <i class="fa fa-times clickable" onclick="$(this).parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
                             </div>
                             <div class="col-3 form-group required">
@@ -94,7 +94,7 @@
         function addContact() {
             $('\
                 <div class="row">\
-                    <div class="col-1 vertical-middle">\
+                    <div class="col-1 vertical-center">\
                         <i class="fa fa-times clickable" onclick="$(this).parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>\
                     </div>\
                     <div class="col-3 form-group required">\
