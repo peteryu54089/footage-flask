@@ -143,12 +143,17 @@ h4 {
 .accordion-body {
     padding: 0.4em 0.8em 1.3em 0.8em;
     letter-spacing: 0.05em;
+    white-space: pre-line;
     line-height: 2.4em;
+}
+
+.accordion-body:first-line {
+    line-height: 0;
 }
 
 /******************** other ********************/
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
     #sidebar {
         display: none;
     }

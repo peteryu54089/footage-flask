@@ -1,10 +1,10 @@
 var currentPage = 1;
 var navbarTexts = ['Menu', 'Home', 'About', 'Projects', 'Q&A', 'Contact'];
-var isLargeScreen = window.matchMedia('(min-width: 992px)').matches;
+var isLargeScreen = window.matchMedia('(min-width: 1200px)').matches;
 
 $(function() {
     $(window).resize(function() {
-        isLargeScreen = window.matchMedia('(min-width: 992px)').matches;
+        isLargeScreen = window.matchMedia('(min-width: 1200px)').matches;
         updateBars();
     });
 
