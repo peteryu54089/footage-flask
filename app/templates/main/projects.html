@@ -37,26 +37,48 @@
             <div class="col-10" style="height: 100%;">
                 <div style="height: 100%;background-color: white;border-radius: 1.5em;padding: 1em;">
                     <div class="d-flex flex-wrap justify-content-center" style="max-height: 100%;overflow: scroll;">
-                        <div class="flex-column" style="height: 10em;width: 10em;margin: 1em;">
-                            <div class="vertical-center" style="height: 85%;">
-                                <img src="/static/images/projects-2.jpg" style="max-height: 100%; max-width: 100%;">
-                            </div>
-                            <div style="height: 15%;">
-                                <div class="row g-0" style="height: 100%;">
-                                    <div style="height: 100%;width: 90%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
-                                        test-background.png
-                                    </div>
-                                    <div class="vertical-center" style="height: 100%;width: 10%;">
-                                        <i class="fa fa-times clickable" style="color: red;font-size: 1.5em;"></i>
-                                    </div>
+                        {% for image in projects1 %}
+                            <div class="flex-column" style="height: 10em;width: 10em;margin: 1em;">
+                                <div class="vertical-center" style="height: 85%;">
+                                    <img src="{{ url_for('static', filename='images/projects-1/' + image)}}" style="max-height: 100%; max-width: 100%;">
+                                </div>
+                                <div class="vertical-center" style="height: 15%;">
+                                    <span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ image }}</span>
+                                    <i class="fa fa-times clickable" style="color: red;font-size: 1.5em;margin-left: 0.2em;"></i>
                                 </div>
                             </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
             <div class="col-1"></div>
         </div>
+        <div style="height: 1.3em;"></div>
+        <div class="vertical-center" style="height: 10.8em;">
+            <h1 style="color: #D8BF69;filter: drop-shadow(0.05em 0.05em 0.05em black);font-family: 'bogart-regular-trial';">Projects - II</h1>
+        </div>
+        <div class="row g-0" style="height: 25em;">
+            <div class="col-1"></div>
+            <div class="col-10" style="height: 100%;">
+                <div style="height: 100%;background-color: white;border-radius: 1.5em;padding: 1em;">
+                    <div class="d-flex flex-wrap justify-content-center" style="max-height: 100%;overflow: scroll;">
+                        {% for image in projects2 %}
+                            <div class="flex-column" style="height: 10em;width: 10em;margin: 1em;">
+                                <div class="vertical-center" style="height: 85%;">
+                                    <img src="{{ url_for('static', filename='images/projects-2/' + image)}}" style="max-height: 100%; max-width: 100%;">
+                                </div>
+                                <div class="vertical-center" style="height: 15%;">
+                                    <span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ image }}</span>
+                                    <i class="fa fa-times clickable" style="color: red;font-size: 1.5em;margin-left: 0.2em;"></i>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        <div style="height: 10em;"></div>
     </div>
 {% endblock content %}
 {% block footer %}
