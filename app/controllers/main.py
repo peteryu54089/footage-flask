@@ -25,10 +25,18 @@ def about():
         return redirect(url_for('login'))
     return render_template('main/about.html')
 
-@app.route('/projects')
+@app.route('/projects', methods = ['GET', 'POST'])
 def projects():
     if not current_user.is_active:
         return redirect(url_for('login'))
+    if request.method == 'POST':
+        for image in request.files.getlist('images1'):
+            if image.filename != '':
+                image.save(os.path.join(app.config['UPLOAD_PROJECTS_1'], image.filename))
+        for image in request.files.getlist('images2'):
+            if image.filename != '':
+                image.save(os.path.join(app.config['UPLOAD_PROJECTS_2'], image.filename))
+        flash('Saved successfully')
     projects1 = [f for f in os.listdir(app.config['UPLOAD_PROJECTS_1']) if not f.startswith('.')]
     projects2 = [f for f in os.listdir(app.config['UPLOAD_PROJECTS_2']) if not f.startswith('.')]
     return render_template('main/projects.html', projects1 = projects1, projects2 = projects2)

@@ -54,16 +54,16 @@
                                     <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
                                 </div>
                                 <div class="col-11 form-group required">
-                                    <input class="form-control" id="title{{ qna.id }}" maxlength="100" minlength="1" name="title{{ qna.id }}" type="text" style="width: 100%;" placeholder="title" value="{{ qna.title }}" required>
+                                    <input class="form-control" maxlength="100" minlength="1" name="title{{ qna.id }}" type="text" style="width: 100%;" placeholder="title" value="{{ qna.title }}" required>
                                 </div>
                             </div>
                             <div class="row g-0">
                                 <div class="col-1 vertical-center"></div>
                                 <div class="col-11 form-group required">
-                                    <textarea class="form-control" id="content{{ qna.id }}" maxlength="10000" minlength="1" name="content{{ qna.id }}" rows="4" cols="50" style="width: 100%;" placeholder="content" required>{{ qna.content }}</textarea>
+                                    <textarea class="form-control" maxlength="10000" minlength="1" name="content{{ qna.id }}" rows="4" cols="50" style="width: 100%;" placeholder="content" required>{{ qna.content }}</textarea>
                                 </div>
                             </div>
-                            <input class="form-control" id="category{{ qna.id }}" name="category{{ qna.id }}" type="hidden" value="{{ qna.category }}">
+                            <input class="form-control" name="category{{ qna.id }}" type="hidden" value="{{ qna.category }}">
                         </div>
                     {% endfor %}
                     <div id="qnaBaseline1" style="height: 1em;"></div>
@@ -89,16 +89,16 @@
                                     <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
                                 </div>
                                 <div class="col-11 form-group required">
-                                    <input class="form-control" id="title{{ qna.id }}" maxlength="100" minlength="1" name="title{{ qna.id }}" type="text" style="width: 100%;" placeholder="title" value="{{ qna.title }}" required>
+                                    <input class="form-control" maxlength="100" minlength="1" name="title{{ qna.id }}" type="text" style="width: 100%;" placeholder="title" value="{{ qna.title }}" required>
                                 </div>
                             </div>
                             <div class="row g-0">
                                 <div class="col-1 vertical-center"></div>
                                 <div class="col-11 form-group required">
-                                    <textarea class="form-control" id="content{{ qna.id }}" maxlength="10000" minlength="1" name="content{{ qna.id }}" rows="4" cols="50" style="width: 100%;" placeholder="content" required>{{ qna.content }}</textarea>
+                                    <textarea class="form-control" maxlength="10000" minlength="1" name="content{{ qna.id }}" rows="4" cols="50" style="width: 100%;" placeholder="content" required>{{ qna.content }}</textarea>
                                 </div>
                             </div>
-                            <input class="form-control" id="category{{ qna.id }}" name="category{{ qna.id }}" type="hidden" value="{{ qna.category }}">
+                            <input class="form-control" name="category{{ qna.id }}" type="hidden" value="{{ qna.category }}">
                         </div>
                     {% endfor %}
                     <div id="qnaBaseline2" style="height: 1em;"></div>
@@ -124,16 +124,16 @@
                                     <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>
                                 </div>
                                 <div class="col-11 form-group required">
-                                    <input class="form-control" id="title{{ qna.id }}" maxlength="100" minlength="1" name="title{{ qna.id }}" type="text" style="width: 100%;" placeholder="title" value="{{ qna.title }}" required>
+                                    <input class="form-control" maxlength="100" minlength="1" name="title{{ qna.id }}" type="text" style="width: 100%;" placeholder="title" value="{{ qna.title }}" required>
                                 </div>
                             </div>
                             <div class="row g-0">
                                 <div class="col-1 vertical-center"></div>
                                 <div class="col-11 form-group required">
-                                    <textarea class="form-control" id="content{{ qna.id }}" maxlength="10000" minlength="1" name="content{{ qna.id }}" rows="4" cols="50" style="width: 100%;" placeholder="content" required>{{ qna.content }}</textarea>
+                                    <textarea class="form-control" maxlength="10000" minlength="1" name="content{{ qna.id }}" rows="4" cols="50" style="width: 100%;" placeholder="content" required>{{ qna.content }}</textarea>
                                 </div>
                             </div>
-                            <input class="form-control" id="category{{ qna.id }}" name="category{{ qna.id }}" type="hidden" value="{{ qna.category }}">
+                            <input class="form-control" name="category{{ qna.id }}" type="hidden" value="{{ qna.category }}">
                         </div>
                     {% endfor %}
                     <div id="qnaBaseline3" style="height: 1em;"></div>
@@ -148,7 +148,7 @@
                     <div class="row g-0">
                         <div class="col-4"></div>
                         <div class="col-4 form-group">
-                            <input class="btn btn-default btn-success" id="submit" name="submit" type="submit" value="save" style="width: 100%;">
+                            <input class="btn btn-default btn-success" name="submit" type="submit" value="save" style="width: 100%;">
                         </div>
                         <div class="col-4"></div>
                     </div>
@@ -187,16 +187,16 @@
                             <i class="fa fa-times clickable" onclick="$(this).parent().parent().parent().remove();" style="color: red;font-size: 1.5em;"></i>\
                         </div>\
                         <div class="col-11 form-group required">\
-                            <input class="form-control" id="newTitle' + qnaIdx + '" maxlength="100" minlength="1" name="newTitle' + qnaIdx + '" type="text" style="width: 100%;" placeholder="title" required>\
+                            <input class="form-control" maxlength="100" minlength="1" name="newTitle' + qnaIdx + '" type="text" style="width: 100%;" placeholder="title" required>\
                         </div>\
                     </div>\
                     <div class="row g-0">\
                         <div class="col-1 vertical-center"></div>\
                         <div class="col-11 form-group required">\
-                            <textarea class="form-control" id="newContent' + qnaIdx + '" maxlength="10000" minlength="1" name="newContent' + qnaIdx + '" rows="4" cols="50" style="width: 100%;" placeholder="content" required></textarea>\
+                            <textarea class="form-control" maxlength="10000" minlength="1" name="newContent' + qnaIdx + '" rows="4" cols="50" style="width: 100%;" placeholder="content" required></textarea>\
                         </div>\
                     </div>\
-                    <input class="form-control" id="newCategory' + qnaIdx + '" name="newCategory' + qnaIdx + '" type="hidden" value="' + category + '">\
+                    <input class="form-control" name="newCategory' + qnaIdx + '" type="hidden" value="' + category + '">\
                 </div>').insertBefore('#qnaBaseline' + category);
             qnaIdx++;
         }

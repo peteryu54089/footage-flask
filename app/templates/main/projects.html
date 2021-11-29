@@ -6,6 +6,10 @@
             filter: drop-shadow(0.05em 0.05em 0.05em black);
             font-family: 'bogart-regular-trial';
         }
+
+        .form-group {
+            padding: 0 1% 0 1%;
+        }
     </style>
 {% endblock head %}
 {% block title %} - Projects{% endblock title %}
@@ -27,7 +31,7 @@
             </div>
         </div>
     </nav>
-    <div class="flex-column">
+    <form action="{{ url_for('projects') }}" method="post" class="form flex-column" role="form" enctype="multipart/form-data">
         <div style="height: 1.3em;"></div>
         <div class="vertical-center" style="height: 10.8em;">
             <h1 style="color: #D8BF69;filter: drop-shadow(0.05em 0.05em 0.05em black);font-family: 'bogart-regular-trial';">Projects - I</h1>
@@ -52,6 +56,35 @@
                 </div>
             </div>
             <div class="col-1"></div>
+        </div>
+        <div style="height: 4em;"></div>
+        <div class="flex-column" style="height: 3.6em;">
+            <div class="row g-0" style="height: 100%;">
+                <div class="col-2"></div>
+                <div class="col-5 form-group vertical-center">
+                    <input class="form-control" name="images1" type="file" style="width: 100%;" multiple>
+                </div>
+                <div class="col-3 form-group vertical-center">
+                    <input class="btn btn-default btn-success" name="submit" type="submit" value="upload" style="width: 100%;">
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+        <div style="height: 2em;"></div>
+        <div class="row g-0" style="height: 3.6em;">
+            <div class="col-2"></div>
+            <div class="col-8 form-group">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="alert alert-success" role="alert" style="margin: 0;text-align: center;">
+                            {% for message in messages %}
+                                <span>{{ message }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="col-2"></div>
         </div>
         <div style="height: 1.3em;"></div>
         <div class="vertical-center" style="height: 10.8em;">
@@ -78,8 +111,37 @@
             </div>
             <div class="col-1"></div>
         </div>
-        <div style="height: 10em;"></div>
-    </div>
+        <div style="height: 4em;"></div>
+        <div class="flex-column" style="height: 3.6em;">
+            <div class="row g-0" style="height: 100%;">
+                <div class="col-2"></div>
+                <div class="col-5 form-group vertical-center">
+                    <input class="form-control" name="images2" type="file" style="width: 100%;" multiple>
+                </div>
+                <div class="col-3 form-group vertical-center">
+                    <input class="btn btn-default btn-success" name="submit" type="submit" value="upload" style="width: 100%;">
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+        <div style="height: 2em;"></div>
+        <div class="row g-0" style="height: 3.6em;">
+            <div class="col-2"></div>
+            <div class="col-8 form-group">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="alert alert-success" role="alert" style="margin: 0;text-align: center;">
+                            {% for message in messages %}
+                                <span>{{ message }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div style="height: 4em;"></div>
+    </form>
 {% endblock content %}
 {% block footer %}
     <script>
