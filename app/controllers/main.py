@@ -33,6 +33,20 @@ def projects():
     projects2 = [f for f in os.listdir(app.config['UPLOAD_PROJECTS_2']) if not f.startswith('.')]
     return render_template('main/projects.html', projects1 = projects1, projects2 = projects2)
 
+@app.route('/del-projects-1', methods = ['POST'])
+def delProjects1():
+    if not current_user.is_active:
+        return 'login'
+    os.remove(os.path.join(app.config['UPLOAD_PROJECTS_1'], request.get_json(force=True).get('filename')))
+    return 'projects'
+
+@app.route('/del-projects-2', methods = ['POST'])
+def delProjects2():
+    if not current_user.is_active:
+        return 'login'
+    os.remove(os.path.join(app.config['UPLOAD_PROJECTS_2'], request.get_json(force=True).get('filename')))
+    return 'projects'
+
 @app.route('/qna', methods = ['GET', 'POST'])
 def qna():
     if not current_user.is_active:

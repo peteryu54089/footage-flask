@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="vertical-center" style="height: 15%;">
                                     <span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ image }}</span>
-                                    <i class="fa fa-times clickable" style="color: red;font-size: 1.5em;margin-left: 0.2em;"></i>
+                                    <i class="fa fa-times clickable" style="color: red;font-size: 1.5em;margin-left: 0.2em;" onclick="delProjects(1, '{{ image }}')"></i>
                                 </div>
                             </div>
                         {% endfor %}
@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="vertical-center" style="height: 15%;">
                                     <span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ image }}</span>
-                                    <i class="fa fa-times clickable" style="color: red;font-size: 1.5em;margin-left: 0.2em;"></i>
+                                    <i class="fa fa-times clickable" style="color: red;font-size: 1.5em;margin-left: 0.2em;" onclick="delProjects(2, '{{ image }}')"></i>
                                 </div>
                             </div>
                         {% endfor %}
@@ -82,4 +82,13 @@
     </div>
 {% endblock content %}
 {% block footer %}
+    <script>
+        function delProjects(id, filename) {
+            if (confirm('Are you sure?')) {
+                $.post('del-projects-' + id.toString(), JSON.stringify({ filename: filename })).done(function(data) {
+                    location.href = data;
+                });
+            }
+        }
+    </script>
 {% endblock footer %}
