@@ -1,9 +1,13 @@
-import os
+import os, json
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user
+from werkzeug.utils import secure_filename
 from app.forms.main import FormLogin
 from app.models.main import User, Qna, Contact
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'png', 'jpg', 'jpeg'}
 
 @app.route('/')
 def index():
@@ -30,30 +34,19 @@ def projects():
     if not current_user.is_active:
         return redirect(url_for('login'))
     if request.method == 'POST':
+        for filename in json.loads(request.form.get('filenames'))['projects1']:
+            os.remove(os.path.join(app.config['UPLOAD_PROJECTS_1'], filename))
+        for filename in json.loads(request.form.get('filenames'))['projects2']:
+            os.remove(os.path.join(app.config['UPLOAD_PROJECTS_2'], filename))
         for image in request.files.getlist('images1'):
-            if image.filename != '':
+            if image.filename != '' and image and allowed_file(image.filename):
                 image.save(os.path.join(app.config['UPLOAD_PROJECTS_1'], image.filename))
         for image in request.files.getlist('images2'):
-            if image.filename != '':
+            if image.filename != '' and image and allowed_file(image.filename):
                 image.save(os.path.join(app.config['UPLOAD_PROJECTS_2'], image.filename))
-        flash('Saved successfully')
     projects1 = [f for f in os.listdir(app.config['UPLOAD_PROJECTS_1']) if not f.startswith('.')]
     projects2 = [f for f in os.listdir(app.config['UPLOAD_PROJECTS_2']) if not f.startswith('.')]
     return render_template('main/projects.html', projects1 = projects1, projects2 = projects2)
-
-@app.route('/del-projects-1', methods = ['POST'])
-def delProjects1():
-    if not current_user.is_active:
-        return 'login'
-    os.remove(os.path.join(app.config['UPLOAD_PROJECTS_1'], request.get_json(force=True).get('filename')))
-    return 'projects'
-
-@app.route('/del-projects-2', methods = ['POST'])
-def delProjects2():
-    if not current_user.is_active:
-        return 'login'
-    os.remove(os.path.join(app.config['UPLOAD_PROJECTS_2'], request.get_json(force=True).get('filename')))
-    return 'projects'
 
 @app.route('/qna', methods = ['GET', 'POST'])
 def qna():

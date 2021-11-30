@@ -10,6 +10,10 @@
         .form-group {
             padding: 0 1% 0 1%;
         }
+
+        .red-border {
+            border: solid red;
+        }
     </style>
 {% endblock head %}
 {% block title %} - Projects{% endblock title %}
@@ -36,19 +40,19 @@
         <div class="vertical-center" style="height: 10.8em;">
             <h1 style="color: #D8BF69;filter: drop-shadow(0.05em 0.05em 0.05em black);font-family: 'bogart-regular-trial';">Projects - I</h1>
         </div>
-        <div class="row g-0" style="height: 25em;">
+        <div class="row g-0" style="height: 26em;">
             <div class="col-1"></div>
             <div class="col-10" style="height: 100%;">
                 <div style="height: 100%;background-color: white;border-radius: 1.5em;padding: 1em;">
                     <div class="d-flex flex-wrap justify-content-center" style="max-height: 100%;overflow: scroll;">
                         {% for image in projects1 %}
-                            <div class="flex-column" style="height: 10em;width: 10em;margin: 1em;">
+                            <div class="flex-column" style="height: 10em;width: 10em;margin: 1em;padding: 0.5em;">
                                 <div class="vertical-center" style="height: 85%;">
-                                    <img src="{{ url_for('static', filename='images/projects-1/' + image)}}" style="max-height: 100%; max-width: 100%;">
+                                    <img src="{{ url_for('static', filename='images/projects-1/' + image)}}" style="max-height: 95%; max-width: 95%;">
                                 </div>
                                 <div class="vertical-center" style="height: 15%;">
-                                    <span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ image }}</span>
-                                    <i class="fa fa-times clickable" style="color: red;font-size: 1.5em;margin-left: 0.2em;" onclick="delProjects(1, '{{ image }}')"></i>
+                                    <span class="select-projects-1" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ image }}</span>
+                                    <i class="fa fa-times clickable" style="color: red;font-size: 1.5em;margin-left: 0.2em;" onclick="selectProjects(1, '{{ image }}');"></i>
                                 </div>
                             </div>
                         {% endfor %}
@@ -57,52 +61,38 @@
             </div>
             <div class="col-1"></div>
         </div>
-        <div style="height: 4em;"></div>
+        <div style="height: 2em;"></div>
         <div class="flex-column" style="height: 3.6em;">
             <div class="row g-0" style="height: 100%;">
-                <div class="col-2"></div>
-                <div class="col-5 form-group vertical-center">
+                <div class="col-3"></div>
+                <div class="col-4 form-group vertical-center">
                     <input class="form-control" name="images1" type="file" style="width: 100%;" multiple>
                 </div>
-                <div class="col-3 form-group vertical-center">
-                    <input class="btn btn-default btn-success" name="submit" type="submit" value="upload" style="width: 100%;">
+                <div class="col-2 form-group vertical-center">
+                    <button class="btn btn-default btn-danger" type="button" style="width: 100%;padding: .375rem 0;" onclick="selectAllProjects(1);">
+                        <i class="far fa-object-group"></i>
+                    </button>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-3"></div>
             </div>
-        </div>
-        <div style="height: 2em;"></div>
-        <div class="row g-0" style="height: 3.6em;">
-            <div class="col-2"></div>
-            <div class="col-8 form-group">
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        <div class="alert alert-success" role="alert" style="margin: 0;text-align: center;">
-                            {% for message in messages %}
-                                <span>{{ message }}</span>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                {% endwith %}
-            </div>
-            <div class="col-2"></div>
         </div>
         <div style="height: 1.3em;"></div>
         <div class="vertical-center" style="height: 10.8em;">
             <h1 style="color: #D8BF69;filter: drop-shadow(0.05em 0.05em 0.05em black);font-family: 'bogart-regular-trial';">Projects - II</h1>
         </div>
-        <div class="row g-0" style="height: 25em;">
+        <div class="row g-0" style="height: 26em;">
             <div class="col-1"></div>
             <div class="col-10" style="height: 100%;">
                 <div style="height: 100%;background-color: white;border-radius: 1.5em;padding: 1em;">
                     <div class="d-flex flex-wrap justify-content-center" style="max-height: 100%;overflow: scroll;">
                         {% for image in projects2 %}
-                            <div class="flex-column" style="height: 10em;width: 10em;margin: 1em;">
+                            <div class="flex-column" style="height: 10em;width: 10em;margin: 1em;padding: 0.5em;">
                                 <div class="vertical-center" style="height: 85%;">
-                                    <img src="{{ url_for('static', filename='images/projects-2/' + image)}}" style="max-height: 100%; max-width: 100%;">
+                                    <img src="{{ url_for('static', filename='images/projects-2/' + image)}}" style="max-height: 95%; max-width: 95%;">
                                 </div>
                                 <div class="vertical-center" style="height: 15%;">
-                                    <span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ image }}</span>
-                                    <i class="fa fa-times clickable" style="color: red;font-size: 1.5em;margin-left: 0.2em;" onclick="delProjects(2, '{{ image }}')"></i>
+                                    <span class="select-projects-2" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">{{ image }}</span>
+                                    <i class="fa fa-times clickable" style="color: red;font-size: 1.5em;margin-left: 0.2em;" onclick="selectProjects(2, '{{ image }}');"></i>
                                 </div>
                             </div>
                         {% endfor %}
@@ -111,46 +101,82 @@
             </div>
             <div class="col-1"></div>
         </div>
-        <div style="height: 4em;"></div>
+        <div style="height: 2em;"></div>
         <div class="flex-column" style="height: 3.6em;">
             <div class="row g-0" style="height: 100%;">
-                <div class="col-2"></div>
-                <div class="col-5 form-group vertical-center">
+                <div class="col-3"></div>
+                <div class="col-4 form-group vertical-center">
                     <input class="form-control" name="images2" type="file" style="width: 100%;" multiple>
                 </div>
-                <div class="col-3 form-group vertical-center">
-                    <input class="btn btn-default btn-success" name="submit" type="submit" value="upload" style="width: 100%;">
+                <div class="col-2 form-group vertical-center">
+                    <button class="btn btn-default btn-danger" type="button" style="width: 100%;padding: .375rem 0;" onclick="selectAllProjects(2);">
+                        <i class="far fa-object-group"></i>
+                    </button>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-3"></div>
             </div>
         </div>
-        <div style="height: 2em;"></div>
-        <div class="row g-0" style="height: 3.6em;">
-            <div class="col-2"></div>
-            <div class="col-8 form-group">
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        <div class="alert alert-success" role="alert" style="margin: 0;text-align: center;">
-                            {% for message in messages %}
-                                <span>{{ message }}</span>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                {% endwith %}
+        <div style="height: 5em;"></div>
+        <div class="flex-column" style="height: 3.6em;">
+            <div class="row g-0" style="height: 100%;">
+                <div class="col-4 col-lg-5"></div>
+                <div class="col-4 col-lg-2 form-group vertical-center">
+                    <input class="btn btn-default btn-success" type="button" value="save" style="width: 100%;" onclick="delProjects();">
+                </div>
+                <div class="col-4 col-lg-5"></div>
             </div>
-            <div class="col-2"></div>
         </div>
-        <div style="height: 4em;"></div>
+        <div style="height: 8em;"></div>
     </form>
 {% endblock content %}
 {% block footer %}
     <script>
-        function delProjects(id, filename) {
-            if (confirm('Are you sure?')) {
-                $.post('del-projects-' + id.toString(), JSON.stringify({ filename: filename })).done(function(data) {
-                    location.href = data;
-                });
+        var projects = [[], []];
+
+        $(function() {
+            $('.fa-times').on('click', function() {
+                $(this).parent().parent().toggleClass('red-border');
+            });
+        });
+
+        function selectProjects(id, filename) {
+            if (projects[id - 1].includes(filename)) {
+                let index = projects[id - 1].indexOf(filename);
+                if (index > -1) {
+                    projects[id - 1].splice(index, 1);
+                }
+            } else {
+                projects[id - 1].push(filename);
             }
+        }
+
+        function selectAllProjects(id) {
+            let className = '.select-projects-' + id.toString();
+            $(className).parent().parent().addClass('red-border');
+            $(className).each(function() {
+                if (!projects[id - 1].includes($(this).text())) {
+                    projects[id - 1].push($(this).text());
+                }
+            });
+        }
+
+        function delProjects() {
+            let formData = new FormData($('form')[0]);
+            formData.append('images1', $('input[name="images1"]').get(0).files[0]);
+            formData.append('images2', $('input[name="images2"]').get(0).files[0]);
+            formData.append('filenames', JSON.stringify({ projects1: projects[0], projects2: projects[1] }));
+            $.ajax({
+                url: 'projects',
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                processData : false, 
+                contentType : false,
+                complete: function() {
+                    location.reload();
+                }
+            });
+            $('.btn-success').attr('disabled', true);
         }
     </script>
 {% endblock footer %}
