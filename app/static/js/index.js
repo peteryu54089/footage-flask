@@ -66,13 +66,7 @@ $(function() {
         $('.sidebar-before-ig').show();
     });
 
-    $('#projectsModal1').on('shown.bs.modal', function() {
-        $('.grid').masonry({
-            itemSelector: '.grid-item'
-        });
-    });
-
-    $('#projectsModal2').on('shown.bs.modal', function() {
+    $('.projects-modal').on('shown.bs.modal', function() {
         $('.grid').masonry({
             itemSelector: '.grid-item'
         });
