@@ -65,6 +65,29 @@ $(function() {
         $('.sidebar-after-ig').hide();
         $('.sidebar-before-ig').show();
     });
+
+    $('#projectsModal1').on('shown.bs.modal', function() {
+        $('.grid').masonry({
+            itemSelector: '.grid-item'
+        });
+    });
+
+    $('#projectsModal2').on('shown.bs.modal', function() {
+        $('.grid').masonry({
+            itemSelector: '.grid-item'
+        });
+    });
+
+    $('.modal').on('hidden.bs.modal', function() { 
+        if (!$('.modal:visible').length) { 
+            $('body').css('overflow', 'visible');
+        }
+    });
+
+    $('.projects-img').on('click', function() {
+        $('#imgPreview').attr('src', $(this).attr('src'));
+        $('#imgModal').modal('show');
+    });
 });
 
 function toggleNavbar() {

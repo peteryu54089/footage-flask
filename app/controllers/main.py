@@ -11,11 +11,13 @@ def allowed_file(filename):
 
 @app.route('/')
 def index():
+    projects1 = [f for f in os.listdir(app.config['UPLOAD_PROJECTS_1']) if not f.startswith('.')]
+    projects2 = [f for f in os.listdir(app.config['UPLOAD_PROJECTS_2']) if not f.startswith('.')]
     qnas1 = Qna.query.filter_by(category = '1').all()
     qnas2 = Qna.query.filter_by(category = '2').all()
     qnas3 = Qna.query.filter_by(category = '3').all()
     contacts = Contact.query.all()
-    return render_template('main/index.html', qnas1 = qnas1, qnas2 = qnas2, qnas3 = qnas3, contacts = contacts)
+    return render_template('main/index.html', projects1 = projects1, projects2 = projects2, qnas1 = qnas1, qnas2 = qnas2, qnas3 = qnas3, contacts = contacts)
 
 @app.route('/admin')
 def admin():

@@ -95,8 +95,8 @@
         </div>
         <div class="section">
             <div class="sec-3 row g-0">
-                <div class="col-12 col-lg-6 projects-1"></div>
-                <div class="col-12 col-lg-6 projects-2"></div>
+                <div class="col-12 col-lg-6 projects-1 clickable" data-bs-toggle="modal" data-bs-target="#projectsModal1"></div>
+                <div class="col-12 col-lg-6 projects-2 clickable" data-bs-toggle="modal" data-bs-target="#projectsModal2"></div>
             </div>
         </div>
         <div class="section fp-auto-height">
@@ -296,6 +296,55 @@
         </div>
         <div style="height: 11%;"></div>
         <div style="height: 1.5%;"></div>
+    </div>
+    <div class="modal fade" id="projectsModal1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="projectsModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+            <div class="modal-content" style="border-radius: 1.2em;filter: drop-shadow(0.05em 0.05em 0.5em #272727);">
+                <div class="modal-header" style="border-bottom: 0;">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="grid">
+                        <div class="row" data-masonry='{"percentPosition": true }'>
+                            {% for image in projects1%}
+                                <div class="grid-item col-12 col-lg-4 g-3">
+                                    <img class="clickable projects-img" src="/static/images/projects-1/{{ image }}" style="width: 100%;">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="projectsModal2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="projectsModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+            <div class="modal-content" style="border-radius: 1.2em;filter: drop-shadow(0.05em 0.05em 0.5em #272727);">
+                <div class="modal-header" style="border-bottom: 0;">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="grid">
+                        <div class="row" data-masonry='{"percentPosition": true }'>
+                            {% for image in projects2%}
+                                <div class="grid-item col-12 col-lg-4 g-3">
+                                    <img class="clickable projects-img" src="/static/images/projects-2/{{ image }}" style="width: 100%;">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="imgModal" tabindex="-1" aria-labelledby="imgModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" data-bs-dismiss="modal" style="background-color: rgba(0, 0, 0, 0.9);">
+                <div class="modal-body vertical-center" style="padding: 0;">
+                    <img src="" id="imgPreview" style="max-width: 100%; max-height: 100%;">
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock content %}
 {% block footer %}
