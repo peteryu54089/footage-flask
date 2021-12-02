@@ -11,8 +11,8 @@ def allowed_file(filename):
 
 @app.route('/')
 def index():
-    projects1 = [f for f in os.listdir(app.config['UPLOAD_PROJECTS_1']) if not f.startswith('.')]
-    projects2 = [f for f in os.listdir(app.config['UPLOAD_PROJECTS_2']) if not f.startswith('.')]
+    projects1 = [f for f in sorted(os.listdir(app.config['UPLOAD_PROJECTS_1'])) if not f.startswith('.')]
+    projects2 = [f for f in sorted(os.listdir(app.config['UPLOAD_PROJECTS_2'])) if not f.startswith('.')]
     qnas1 = Qna.query.filter_by(category = '1').all()
     qnas2 = Qna.query.filter_by(category = '2').all()
     qnas3 = Qna.query.filter_by(category = '3').all()
@@ -46,8 +46,8 @@ def projects():
         for image in request.files.getlist('images2'):
             if image.filename != '' and image and allowed_file(image.filename):
                 image.save(os.path.join(app.config['UPLOAD_PROJECTS_2'], image.filename))
-    projects1 = [f for f in os.listdir(app.config['UPLOAD_PROJECTS_1']) if not f.startswith('.')]
-    projects2 = [f for f in os.listdir(app.config['UPLOAD_PROJECTS_2']) if not f.startswith('.')]
+    projects1 = [f for f in sorted(os.listdir(app.config['UPLOAD_PROJECTS_1'])) if not f.startswith('.')]
+    projects2 = [f for f in sorted(os.listdir(app.config['UPLOAD_PROJECTS_2'])) if not f.startswith('.')]
     return render_template('main/projects.html', projects1 = projects1, projects2 = projects2)
 
 @app.route('/qna', methods = ['GET', 'POST'])
