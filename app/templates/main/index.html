@@ -90,6 +90,16 @@
         <div class="section">
             <div class="sec-1 clickable" onclick="$('#flashWrapper').fadeIn(100).fadeOut(200);">
                 <div id="flashWrapper" style="height: 100%;background-color: white;display: none;"></div>
+                <svg id="blurArea" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%" width="100%">
+                    <image filter="url(#blurFilter)" xlink:href="/static/images/home.png" height="100%" width="100%" preserveAspectRatio="xMidYMid slice"></image>
+                    <filter id="blurFilter">
+                        <fegaussianblur stdDeviation="5" />
+                    </filter>
+                    <mask id="blurMask">
+                        <circle cx="-50%" cy="-50%" r="170" fill="white" filter="url(#blurFilter)" />
+                    </mask>
+                    <image mask="url(#blurMask)" xlink:href="/static/images/home.png" height="100%" width="100%" preserveAspectRatio="xMidYMid slice"></image>
+                </svg>
             </div>
         </div>
         <div class="section">

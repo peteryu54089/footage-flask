@@ -3,6 +3,10 @@ var navbarTexts = ['Menu', 'Home', 'About', 'Projects', 'Q&A', 'Contact'];
 var isLargeScreen = window.matchMedia('(min-width: 1200px)').matches;
 
 $(function() {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        $('#blurArea').hide();
+    }
+
     $(window).resize(function() {
         isLargeScreen = window.matchMedia('(min-width: 1200px)').matches;
         updateBars();
@@ -81,6 +85,15 @@ $(function() {
     $('.projects-img').on('click', function() {
         $('#imgPreview').attr('src', $(this).attr('src'));
         $('#imgModal').modal('show');
+    });
+
+    $('#blurArea').mousemove(function(e) {
+        e.preventDefault();
+        var upX = e.clientX;
+        var upY = e.clientY;
+        var mask = $('#blurMask circle')[0];
+        mask.setAttribute("cy", (upY - 5) + 'px');
+        mask.setAttribute("cx", (upX) + 'px');
     });
 });
 
